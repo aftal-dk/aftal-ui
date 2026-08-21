@@ -1,0 +1,39 @@
+/* ============================================================================
+   Spacing, layout and radii.
+   ============================================================================ */
+
+:root {
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-7:  28px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+  --space-14: 56px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Layout */
+  --content-max:  1240px;              /* .wrap */
+  --content-wide: 1520px;              /* .wrap-wide (case gallery) */
+  --gutter:       32px;
+  --header-h:     64px;
+  --section-y:    clamp(56px, 9vw, 120px); /* @kind spacing */
+  --section-y-slim: clamp(40px, 5vw, 64px); /* @kind spacing */
+  --grid-gap:     20px;
+
+  /* Radii — 18px is the house card radius; pills for chips and the dock. */
+  --radius-sm:   8px;    /* inputs */
+  --radius-md:   10px;   /* buttons */
+  --radius-lg:   12px;   /* thumbnails */
+  --radius-xl:   14px;   /* dropdowns, gallery slots */
+  --radius-2xl:  16px;   /* reference cards, map, case tiles */
+  --radius-3xl:  18px;   /* the default card / panel radius */
+  --radius-pill: 100px;
+}

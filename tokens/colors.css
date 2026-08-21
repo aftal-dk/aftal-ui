@@ -1,0 +1,106 @@
+/* ============================================================================
+   Colours — Aftal Brand Guide 2026.
+   Five named brand colours. Everything else in the system is a role alias that
+   points at one of them (or at a derived tint of one of them).
+
+     TEGLSTEN  #B84C32   print orange — CMYK work only, never on screen
+     GLØD      #D44016   digital orange — the web/app brand colour
+     SKIFFER   #8F887C   warm neutral grey
+     KALK      #EDEBE8   warm off-white — the brand's default ground
+     KULSORT   #000000   black
+
+   Light (KALK ground) is the default theme, matching the 2026 guide.
+   [data-theme="dark"] re-aliases the surface/text/line roles onto the soft
+   near-black used across the guide's dark applications (#292826, sampled).
+   ============================================================================ */
+
+:root {
+  /* -------- BRAND PALETTE -------- */
+  --teglsten: #b84c32;
+  --glod:     #d44016;
+  --skiffer:  #8f887c;
+  --kalk:     #edebe8;
+  --kulsort:  #000000;
+
+  /* -------- BRAND ROLES -------- */
+  --brand:        var(--glod);              /* everything on screen */
+  --brand-print:  var(--teglsten);          /* reference only — do not use in UI */
+  --brand-hover:  #b8360f;                  /* GLØD darkened 8% */
+  --brand-soft:   rgba(212, 64, 22, 0.10);  /* tinted fill: badges, hover beds */
+  --brand-line:   rgba(212, 64, 22, 0.32);  /* tinted hairline */
+
+  /* -------- SURFACES (light / KALK — default) -------- */
+  --bg:       #edebe8;   /* page — KALK */
+  --bg-2:     #e4e1dc;   /* alternate section band — KALK toward SKIFFER */
+  --panel:    #ffffff;   /* cards, dropdowns, sheets */
+  --panel-2:  #f5f4f1;   /* inputs, nested fills */
+  --panel-hi: #e8e5e1;   /* hover */
+  --tint:     rgba(0, 0, 0, 0.025);   /* card fill directly on the page ground */
+
+  /* -------- TEXT -------- */
+  --ink:      #000000;   /* KULSORT — headings, primary text */
+  --ink-soft: #3a3835;   /* body */
+  --mute:     #6f6a61;   /* captions, metadata (SKIFFER darkened for contrast) */
+  --mute-2:   #8f887c;   /* SKIFFER — fine print, disabled */
+
+  /* -------- BORDERS -------- */
+  --line:     rgba(0, 0, 0, 0.10);
+  --line-2:   rgba(0, 0, 0, 0.17);
+
+  /* -------- CHROME -------- */
+  --header-bg:          rgba(237, 235, 232, 0.80);
+  --header-bg-scrolled: rgba(237, 235, 232, 0.94);
+
+  /* -------- STATUS -------- */
+  --status-success: #3e7d5a;
+  --status-error:   #c02b1d;
+  --status-warning: #c98a1e;
+  --status-info:    #3f6f8f;
+  --status-success-bg: rgba(62, 125, 90, 0.10);
+  --status-error-bg:   rgba(192, 43, 29, 0.10);
+  --status-warning-bg: rgba(201, 138, 30, 0.10);
+  --status-info-bg:    rgba(63, 111, 143, 0.10);
+
+  color-scheme: light;
+}
+
+/* Explicit light scope — the site writes data-theme onto <html>, so the light
+   value has to exist as a scope too, not only as the :root default. */
+[data-theme="light"] {
+  --bg: #edebe8; --bg-2: #e4e1dc; --panel: #ffffff; --panel-2: #f5f4f1; --panel-hi: #e8e5e1;
+  --tint: rgba(0, 0, 0, 0.025);
+  --ink: #000000; --ink-soft: #3a3835; --mute: #6f6a61; --mute-2: #8f887c;
+  --line: rgba(0, 0, 0, 0.10); --line-2: rgba(0, 0, 0, 0.17);
+  --header-bg: rgba(237, 235, 232, 0.80); --header-bg-scrolled: rgba(237, 235, 232, 0.94);
+  color-scheme: light;
+}
+
+/* -------- DARK — soft near-black, not pure KULSORT --------
+   #292826 is the dark ground used on the guide's signage, vehicles and
+   merchandise. The steps above and below it are mixes toward KULSORT and KALK. */
+[data-theme="dark"] {
+  --bg:       #292826;
+  --bg-2:     #211f1e;
+  --panel:    #322f2c;
+  --panel-2:  #3a3733;
+  --panel-hi: #423e39;
+  --tint:     rgba(237, 235, 232, 0.03);
+
+  --ink:      #edebe8;   /* KALK */
+  --ink-soft: #d8d5cf;
+  --mute:     #a19b92;
+  --mute-2:   #8f887c;   /* SKIFFER */
+
+  --line:     rgba(237, 235, 232, 0.10);
+  --line-2:   rgba(237, 235, 232, 0.17);
+
+  --header-bg:          rgba(41, 40, 38, 0.80);
+  --header-bg-scrolled: rgba(41, 40, 38, 0.94);
+
+  --status-success: #6fc79a;
+  --status-error:   #ef6a5c;
+  --status-warning: #e0aa4e;
+  --status-info:    #7fb2d4;
+
+  color-scheme: dark;
+}

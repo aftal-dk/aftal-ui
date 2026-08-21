@@ -1,0 +1,20 @@
+{
+  "name": "aftal-ui-gallery",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "sync-assets": "rm -rf public/assets && mkdir -p public && cp -R ../assets public/assets",
+    "dev": "npm run sync-assets && vite",
+    "build": "npm run sync-assets && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.2.0"
+  }
+}
