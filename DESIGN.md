@@ -170,7 +170,9 @@ loaded from a CDN, so the set stays exactly what the product ships: `arrow`,
 `phone` and `mail` for contact rows. The single filled icon is the terracotta
 map pin (`PinIcon`), which carries a knock-out hole so the map shows through.
 
-Icons are functional, never decorative: an arrow after every forward link, a
+Icons are functional, never decorative: an arrow may follow a forward link
+or button label - but cards carry no arrows and no "Læs mere" line (the card
+itself is the link; decided 21.08.2026) - and: a
 check as the only bullet, a chevron for disclosure. Icons are never boxed in
 circles or coloured tiles. There is no icon font, no sprite sheet, no PNG icons,
 no emoji and no unicode symbols used as icons — with the single exception of the

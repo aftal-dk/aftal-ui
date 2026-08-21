@@ -213,7 +213,7 @@ export function App() {
             <div className="g-grid-3">
               <RefCard title="Tagudskiftning i Gl. Hasseris" meta="Byggeri · Aalborg, 2026" image={img(1)} />
               <RefCard title="Tagudskiftning i Gl. Hasseris" meta="Byggeri · Aalborg, 2026" image={img(2)} />
-              <RefCard smiley title="Dit projekt her?" meta="Vi tager gerne en uforpligtende snak." cta="Kontakt os" />
+              <RefCard smiley title="Dit projekt her?" meta="Vi tager gerne en uforpligtende snak." />
             </div>
           </Block>
           <Block label="stepcard - 3-up procestrin">

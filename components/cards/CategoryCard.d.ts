@@ -6,8 +6,6 @@ export interface CategoryCardProps {
   description: string;
   /** Service labels, joined with " · " as one quiet line. */
   services?: string[];
-  /** Defaults to "Se <title in lowercase>". */
-  cta?: string;
   image?: string;
   href?: string;
   style?: React.CSSProperties;

@@ -15,7 +15,8 @@ export interface SearchSelectOption {
 export interface SearchSelectProps {
   /** Short prefix shown in the closed control: "Ordre", "Ejendom". */
   label?: string;
-  options: SearchSelectOption[];
+  /** Plain strings are treated as { value: s, label: s }. */
+  options: Array<SearchSelectOption | string>;
   value?: string;
   defaultValue?: string;
   onChange?: (value: string, option: SearchSelectOption) => void;
