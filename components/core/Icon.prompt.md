@@ -6,5 +6,5 @@ One-line: the stroke icon set — arrows, check, chevron, menu, theme and contac
 ```
 
 - Icons inherit colour from the parent; brand-coloured icons sit in a wrapper with `color: var(--brand)`.
-- `arrow` shifts 3–4px right on hover of its parent link or card. `check` is always the bullet in USP and service lists.
+- `arrow` follows its parent link or card and never moves on hover. `check` is always the bullet in USP and service lists.
 - `PinIcon` is the filled terracotta map marker; it is the only filled icon in the system.

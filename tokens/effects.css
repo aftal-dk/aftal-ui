@@ -12,8 +12,9 @@
   --dur-slow:  0.2s; /* @kind other */
   --dur-theme: 0.3s; /* @kind other */   /* theme cross-fade on body */
 
-  /* Hover lift used by cards */
-  --lift: translateY(-3px); /* @kind other */
+  /* Hover is colour-fade only - elements never move, grow or slide (Simon, 21.08.2026).
+     --lift is kept as a no-op so older references resolve to no movement. */
+  --lift: none; /* @kind other */
 
   /* Elevation */
   --shadow-none: none;

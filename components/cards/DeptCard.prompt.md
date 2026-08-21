@@ -6,5 +6,5 @@ One-line: the department card — used as a set of three (Udvikling, Byggeri, Dr
 </div>
 ```
 
-- Hover lifts 3px, tints the fill GLØD 6% and pushes the arrow 4px right.
+- Hover tints the fill GLØD 6% and turns the border GLØD 45%. Colour fades only - nothing moves.
 - On mobile the grid collapses to one column below 860px.

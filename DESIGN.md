@@ -141,8 +141,9 @@ structural work. The house card is `--tint` fill (2.5%) plus a hairline plus an
 dialogs). Radii: 8 inputs, 10 buttons, 12 thumbnails, 14 dropdowns, 16 reference
 cards, 18 cards, 100 pills.
 
-**Hover.** Cards lift 3px, tint GLØD 6% and turn their border GLØD 45%; arrows
-slide 4px right; list rows slide 10px right and tint GLØD 5%; links go from
+**Hover.** Colour fades only - elements never move, grow or slide on hover.
+Cards tint GLØD 6% and turn their border GLØD 45%; list rows tint GLØD 5%;
+arrows stay put; links go from
 `--ink-soft` to `--brand`; ghost buttons fill with `--panel`. **Press:** the
 primary button sinks 1px. **Focus:** a 2px GLØD outline at 2px offset, on
 `:focus-visible` only. Inputs swap their border to GLØD and lift the fill; their labels rest full-size inside the field and float up to an 11px label when the field is active or filled.

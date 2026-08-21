@@ -15,8 +15,8 @@ export function CategoryCard({ title, description, services = [], cta, image, hr
       display: 'flex', flexDirection: 'column', overflow: 'hidden',
       border: '1px solid ' + (hover ? 'rgba(212,64,22,0.45)' : 'var(--line)'),
       borderRadius: 'var(--radius-3xl)', background: hover ? 'rgba(212,64,22,0.06)' : 'var(--tint)',
-      color: 'var(--ink)', textDecoration: 'none', transform: hover ? 'translateY(-3px)' : 'none',
-      transition: 'border-color .2s ease, background-color .2s ease, transform .2s ease',
+      color: 'var(--ink)', textDecoration: 'none',
+      transition: 'border-color .2s ease, background-color .2s ease',
     }, style)}>
       <span style={{ display: 'block', borderBottom: '1px solid var(--line)' }}>
         <Media src={image} ratio="16 / 9" radius="0" label={image ? undefined : title} />
@@ -27,7 +27,7 @@ export function CategoryCard({ title, description, services = [], cta, image, hr
         {services.length ? <span style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--mute)', marginTop: 3 }}>{services.join(' · ')}</span> : null}
       </span>
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, marginTop: 'auto', padding: '16px 24px 22px', color: 'var(--brand)', fontWeight: 500, fontSize: 15 }}>
-        {cta || 'Se ' + title.toLowerCase()} <span style={{ transform: hover ? 'translateX(4px)' : 'none', transition: 'transform .15s ease' }}><Icon name="arrow" size={15} /></span>
+        {cta || 'Se ' + title.toLowerCase()} <Icon name="arrow" size={15} />
       </span>
     </a>
   );
