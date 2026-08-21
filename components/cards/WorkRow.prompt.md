@@ -9,4 +9,4 @@ One-line: the service row — Aftal's list format for many services, denser and 
 ```
 
 - The list owns the top hairline; each row draws its own bottom hairline.
-- Hover slides the row 10px right and tints it GLØD 5% — the only place in the system where padding animates.
+- Hover tints the row GLØD 5%. Colour fade only - the row stays put.

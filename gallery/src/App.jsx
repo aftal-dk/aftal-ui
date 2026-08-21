@@ -184,7 +184,7 @@ export function App() {
           </Block>
         </Section>
 
-        <Section id="kort" title="Kort." lead="Tint-fyld og hairline, ingen skygger. Kort løfter 3px ved hover.">
+        <Section id="kort" title="Kort." lead="Tint-fyld og hairline, ingen skygger. Hover er ren farve-fade - intet flytter sig.">
           <Block label="deptcard - 3-up">
             <div className="g-grid-3">
               <DeptCard name="Aftal Udvikling" tag="Fra grund til færdigt projekt" description="Fra idé og grundkøb gennem myndigheder, økonomi og design." />
@@ -198,7 +198,7 @@ export function App() {
               <CategoryCard title="Tømrer" description="Alt tømrerarbejde - fra nybyg til detaljen." services={['Renovering', 'Nybyg', 'Døre og vinduer', 'Terrasse']} image={img(3)} />
             </div>
           </Block>
-          <Block label="workrow - tæt liste, glider 10px ved hover">
+          <Block label="workrow - tæt liste, GLØD-tint ved hover">
             <div>
               <WorkRow title="Tagpap" description="Tæt, vedligeholdelsesfrit tag til flade og lave taghældninger." points={['Flade tage', 'Lav hældning', 'Inddækning']} image={img(1)} />
               <WorkRow title="Droner" description="Droneinspektion af tag og facade." points={['Tag & facade', 'Termografi']} soon />
@@ -270,7 +270,7 @@ export function App() {
               <UspItem>Vi vender tilbage inden for 24 timer</UspItem>
             </div>
           </Block>
-          <Block label="relatedlink - pilen glider 4px ved hover">
+          <Block label="relatedlink">
             <div className="g-row" style={{ gap: 28 }}>
               <RelatedLink>Se vores referencer</RelatedLink>
               <RelatedLink>Læs om Aftal Drift</RelatedLink>
