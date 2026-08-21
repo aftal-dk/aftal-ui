@@ -114,7 +114,7 @@ export function App() {
           </Block>
         </Section>
 
-        <Section id="typografi" title="Typografi." lead="Google Sans Flex bærer alt. Overskrifter er korte statements med punktum.">
+        <Section id="typografi" title="Typografi." lead="Google Sans Flex bærer alt. Strait til én condensed overskrift ad gangen, Google Sans Code til småtryk.">
           <Block label="display / h1">
             <p className="h1">Op til tiden. Ned til tiden.</p>
           </Block>
@@ -123,6 +123,11 @@ export function App() {
           </Block>
           <Block label="h3">
             <p className="h3">Alt samlet ét sted.</p>
+          </Block>
+          <Block label="strait - condensed accent, kun Regular, højst én pr. side">
+            <p className="h2" style={{ fontFamily: 'var(--font-accent)', fontWeight: 400, letterSpacing: 0 }}>
+              Vi møder op, og vi gør det, vi har sagt.
+            </p>
           </Block>
           <Block label="brødtekst">
             <p className="body" style={{ maxWidth: 640 }}>
