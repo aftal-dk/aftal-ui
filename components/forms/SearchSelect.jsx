@@ -3,6 +3,8 @@ import React from 'react';
 /** Dropdown with built-in type-to-filter: the closed control looks like a select,
     but opening it turns the trigger into a search input that filters the list live. */
 export function SearchSelect({ label, options = [], value, defaultValue, onChange, placeholder = 'Søg …', height = 42, maxHeight = 320, style }) {
+  // Options may be plain strings or { value, label, meta? } objects.
+  const opts = React.useMemo(() => options.map((o) => (typeof o === 'string' ? { value: o, label: o } : o)), [options]);
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
   const [active, setActive] = React.useState(0);
@@ -11,9 +13,9 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
   const wrapRef = React.useRef(null);
   const inputRef = React.useRef(null);
   const listRef = React.useRef(null);
-  const selected = options.find((o) => o.value === val) || null;
+  const selected = opts.find((o) => o.value === val) || null;
   const q = query.trim().toLowerCase();
-  const filtered = q ? options.filter((o) => (o.value + ' ' + o.label + ' ' + (o.meta || '')).toLowerCase().includes(q)) : options;
+  const filtered = q ? opts.filter((o) => (o.value + ' ' + o.label + ' ' + (o.meta || '')).toLowerCase().includes(q)) : opts;
 
   React.useEffect(() => {
     if (!open) return;
@@ -85,7 +87,7 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
           </div>
           <div style={{ padding: '7px 12px', borderTop: '1px solid var(--line)', fontSize: 11, color: 'var(--mute)', display: 'flex', gap: 12 }}>
             <span>↑↓ navigér</span><span>↵ vælg</span><span>esc luk</span>
-            <span style={{ marginLeft: 'auto' }}>{filtered.length} af {options.length}</span>
+            <span style={{ marginLeft: 'auto' }}>{filtered.length} af {opts.length}</span>
           </div>
         </div>
       ) : null}

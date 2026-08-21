@@ -6,8 +6,6 @@ export interface RefCardProps {
   /** "Byggeri · Aalborg, 2026" */
   meta: string;
   image?: string;
-  /** @default "Læs mere" */
-  cta?: string;
   /** Renders the playful ":-)" invitation card used as the last slot. @default false */
   smiley?: boolean;
   href?: string;

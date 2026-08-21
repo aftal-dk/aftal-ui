@@ -11,8 +11,6 @@ export interface DeptCardProps {
   tag: string;
   /** Two lines on what the department does. */
   description: string;
-  /** @default "Læs mere" */
-  cta?: string;
   href?: string;
   style?: React.CSSProperties;
 }

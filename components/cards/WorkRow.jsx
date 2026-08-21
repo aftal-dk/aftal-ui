@@ -1,5 +1,4 @@
 import React from 'react';
-import { Icon } from '../core/Icon.jsx';
 import { Media } from './Media.jsx';
 import { Badge } from '../core/Badge.jsx';
 
@@ -13,7 +12,7 @@ export function WorkRow({ title, description, points = [], image, soon = false, 
   const [hover, bind] = useHover();
   return (
     <a href={href} {...bind} style={Object.assign({
-      display: 'grid', gridTemplateColumns: '132px 1fr 28px', gap: 28, alignItems: 'center',
+      display: 'grid', gridTemplateColumns: '132px 1fr', gap: 28, alignItems: 'center',
       padding: '20px 8px', borderBottom: '1px solid var(--line)',
       background: hover ? 'rgba(212,64,22,0.05)' : 'transparent',
       color: 'var(--ink)', textDecoration: 'none', opacity: soon ? 0.72 : 1,
@@ -26,9 +25,6 @@ export function WorkRow({ title, description, points = [], image, soon = false, 
         </span>
         <span style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--ink-soft)' }}>{description}</span>
         {points.length ? <span style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--mute)', marginTop: 3 }}>{points.join(' · ')}</span> : null}
-      </span>
-      <span style={{ justifySelf: 'end', color: 'var(--brand)', display: 'flex' }}>
-        <Icon name="arrow" size={18} />
       </span>
     </a>
   );
