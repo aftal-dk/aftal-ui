@@ -1,0 +1,18 @@
+/* ============================================================================
+   Fonts.
+   Primary:   Google Sans Flex — everything by default. Variable, served locally.
+   Secondary: Strait — condensed display face for a headline or a pull quote.
+              Google Fonts ships Regular (400) only; the brand guide also shows
+              Thin and Italic, which are not available from the web font.
+   Mono:      Google Sans Code — the site's fine print, dates and code.
+   ============================================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:wght@400;500;700&family=Strait&display=swap");
+
+@font-face {
+  font-family: "Google Sans Flex";
+  src: url("../assets/fonts/GoogleSansFlex.woff2") format("woff2-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: swap;
+}

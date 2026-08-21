@@ -1,0 +1,40 @@
+<!-- @dsCard group="Components" viewport="700x640" name="Forms" subtitle="Field, Switch, CallbackForm" -->
+<!DOCTYPE html><html lang="da"><head><meta charset="utf-8"><title>Forms</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script>window.AFTAL_ASSET_BASE='../../assets';</script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;padding:24px;background:var(--bg);color:var(--ink);font-family:var(--font-sans)}.cap{font-size:11px;color:var(--mute);margin:0 0 10px}</style></head>
+<body><div id="root"></div>
+<script type="text/babel">
+const { Field, Switch, CallbackForm, SearchSelect } = window.AftalDesignSystem_7a6b2e;
+const ordrer = Array.from({ length: 18 }, (_, i) => { const n = 308 - i; const t = ['Genmonter køkkenskab på væg','Terrassedør binder','Reklamation - lås','Drone-optagelser','Udskiftning af hegn på terrasse','Vaskemaskiner','Gravsted','Have','Renovering af lejlighed','Hoveddør og terrassedøre binder','Udskiftning af dør i skur','Udskiftning af cylinder og vindue','Udskiftning af utæt tag','Fjernelse af varmepumpe','Udskiftning af bordplade i køkken','Løse vandhaner i køkken og bryggers','Maling af opgang','Nyt gulv i entré'][i]; return { value: String(n), label: '#' + n + ' · ' + t, meta: ['Engtoften 12, Viby J','Gl. Hasseris Villapark','Skalborggaard, Aalborg'][i % 3] }; });
+function Demo() {
+  return (
+    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <p className="cap">Field</p>
+        <Field label="Navn" name="d-name" placeholder="Dit navn" />
+        <Field label="Email" name="d-email" type="email" placeholder="din@mail.dk" />
+        <Field label="Hvad drejer det sig om?" name="d-scope" type="select" options={['Udvikling','Byggeri','Drift','Ikke sikker endnu']} />
+        <Field label="Kort om opgaven" name="d-msg" type="textarea" placeholder="Et par linjer om hvad du har brug for" />
+        <p className="cap" style={{ marginTop: 8 }}>SearchSelect</p>
+        <SearchSelect label="Ordre" placeholder="Alle ordrer" options={ordrer} />
+        <p className="cap" style={{ marginTop: 8 }}>Switch</p>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <Switch defaultChecked locked label="Nødvendige" />
+          <Switch defaultChecked label="Statistik" />
+          <Switch label="Marketing" />
+        </div>
+      </div>
+      <div>
+        <p className="cap">CallbackForm</p>
+        <CallbackForm lead="Fortæl os kort om opgaven - så ringer vi tilbage." />
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Demo />);
+</script></body></html>

@@ -1,0 +1,72 @@
+/* Gallery chrome only - everything visual inside the demos comes from tokens. */
+
+.g-header {
+  position: sticky; top: 0; z-index: 50;
+  height: 64px; display: flex; align-items: center;
+  background: var(--header-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+.g-header-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.g-nav { display: flex; gap: 20px; flex-wrap: wrap; }
+.g-nav a { font-size: 14px; color: var(--ink-soft); }
+.g-nav a:hover { color: var(--brand); }
+
+.g-theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: var(--radius-pill);
+  border: 1px solid var(--line-2); background: transparent; color: var(--ink);
+  cursor: pointer; transition: background-color var(--dur-base) ease;
+}
+.g-theme-toggle:hover { background: var(--panel); }
+
+.g-section { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--line); }
+.g-section:first-of-type { border-top: none; }
+
+.g-label {
+  font-family: var(--font-mono); font-size: 12px; color: var(--mute);
+  margin: 0 0 12px; display: block;
+}
+.g-block { margin-bottom: 40px; }
+.g-block:last-child { margin-bottom: 0; }
+
+.g-row { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.g-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.g-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.g-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+@media (max-width: 900px) {
+  .g-grid-3, .g-grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .g-grid-2, .g-grid-3, .g-grid-4 { grid-template-columns: 1fr; }
+}
+
+/* Colour swatches */
+.g-swatch { border-radius: var(--radius-lg); border: 1px solid var(--line); overflow: hidden; }
+.g-swatch-fill { height: 72px; }
+.g-swatch-meta { padding: 10px 12px; background: var(--panel); }
+.g-swatch-meta strong { display: block; font-size: 13px; font-weight: 500; color: var(--ink); }
+.g-swatch-meta code { font-family: var(--font-mono); font-size: 11px; color: var(--mute); }
+
+/* Dark tile for showing light-on-dark variants regardless of theme */
+.g-dark-tile {
+  background: #292826; border-radius: var(--radius-3xl); padding: 24px;
+  display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
+}
+.g-light-tile {
+  background: #edebe8; border: 1px solid var(--line); border-radius: var(--radius-3xl); padding: 24px;
+  display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
+}
+.g-brand-tile {
+  background: var(--brand); border-radius: var(--radius-3xl); padding: 24px;
+  display: flex; gap: 24px; align-items: center; flex-wrap: wrap;
+}
+
+/* Icon grid */
+.g-icon-cell {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 16px 8px; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--tint); color: var(--ink);
+}
+.g-icon-cell span { font-family: var(--font-mono); font-size: 11px; color: var(--mute); }
+
+.g-footer { padding: 40px 0 64px; }

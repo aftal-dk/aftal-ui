@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/png" href="/assets/logo/aftal-icon.png" />
+    <title>Aftal UI</title>
+    <script>
+      // Theme before first paint - avoids a flash when dark is stored.
+      document.documentElement.setAttribute(
+        'data-theme',
+        localStorage.getItem('aftal-theme') || 'light'
+      );
+      window.AFTAL_ASSET_BASE = '/assets';
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
