@@ -284,8 +284,10 @@ export function App() {
           <Block label="trustband - mørkt medlemsbånd">
             <TrustBand text="Vi er medlem af Byg Garanti og DI Byggeri." />
           </Block>
-          <Block label="ctaband - sidens eneste breaker">
-            <CtaBand title="Klar til at komme i gang?" />
+          <Block label="ctaband - sidens eneste breaker, altid fuldbredde">
+            <div style={{ width: '100vw', marginLeft: 'calc(50% - 50vw)' }}>
+              <CtaBand title="Klar til at komme i gang?" />
+            </div>
           </Block>
         </Section>
       </main>
