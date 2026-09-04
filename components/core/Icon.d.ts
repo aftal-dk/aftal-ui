@@ -10,7 +10,7 @@ export interface IconProps {
   strokeWidth?: number;
   style?: React.CSSProperties;
 }
-export declare function Icon(props: IconProps): JSX.Element;
+export declare function Icon(props: IconProps): React.JSX.Element;
 
 export interface PinIconProps { width?: number; height?: number; style?: React.CSSProperties }
-export declare function PinIcon(props: PinIconProps): JSX.Element;
+export declare function PinIcon(props: PinIconProps): React.JSX.Element;

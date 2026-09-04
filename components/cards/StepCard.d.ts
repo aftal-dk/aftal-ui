@@ -7,4 +7,4 @@ export interface StepCardProps {
   children?: React.ReactNode;
   style?: React.CSSProperties;
 }
-export declare function StepCard(props: StepCardProps): JSX.Element;
+export declare function StepCard(props: StepCardProps): React.JSX.Element;

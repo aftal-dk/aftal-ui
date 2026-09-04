@@ -12,4 +12,4 @@ export interface SectionHeadProps {
   style?: React.CSSProperties;
   children?: React.ReactNode;
 }
-export declare function SectionHead(props: SectionHeadProps): JSX.Element;
+export declare function SectionHead(props: SectionHeadProps): React.JSX.Element;

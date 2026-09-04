@@ -23,4 +23,4 @@ export interface FieldProps {
   rows?: number;
   style?: React.CSSProperties;
 }
-export declare function Field(props: FieldProps): JSX.Element;
+export declare function Field(props: FieldProps): React.JSX.Element;

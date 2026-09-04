@@ -11,4 +11,4 @@ export interface SwitchProps {
   id?: string;
   style?: React.CSSProperties;
 }
-export declare function Switch(props: SwitchProps): JSX.Element;
+export declare function Switch(props: SwitchProps): React.JSX.Element;
