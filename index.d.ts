@@ -7,6 +7,7 @@ export * from './components/core/Logo';
 export * from './components/loading/Spinner';
 export * from './components/loading/Skeleton';
 export * from './components/loading/LoadingBar';
+export * from './components/loading/BusyLabel';
 export * from './components/cards/DeptCard';
 export * from './components/cards/CategoryCard';
 export * from './components/cards/WorkRow';

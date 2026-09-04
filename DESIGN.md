@@ -229,7 +229,7 @@ from the live site are kept in `assets/logo/legacy/` for reference.
 - **core** — `Button`, `Badge`, `Icon` (+ `PinIcon`), `Logo`
 - **cards** — `DeptCard`, `CategoryCard`, `WorkRow`, `RefCard`, `StepCard`, `Media`
 - **forms** — `Field`, `Switch`, `SearchSelect`, `CallbackForm`
-- **loading** — `Spinner`, `Skeleton` (+ `SkeletonList`), `LoadingBar`
+- **loading** — `Spinner`, `Skeleton` (+ `SkeletonList`), `LoadingBar`, `BusyLabel` (migration aid for raw buttons)
 - **layout** — `SectionHead`, `CtaBand`, `Stat`, `UspItem`, `TrustBand`, `RelatedLink`
 
 Every component has a sibling `.d.ts` (props) and `.prompt.md` (when and how to

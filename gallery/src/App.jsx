@@ -82,7 +82,7 @@ export function App() {
           <div className="wrap">
             <h1 className="h1">Aftal UI.</h1>
             <p className="body-lg" style={{ marginTop: 16, maxWidth: 640 }}>
-              Designsystemet bag det nye brand - tokens og 23 komponenter, som alle
+              Designsystemet bag det nye brand - tokens og 24 komponenter, som alle
               Aftals flader bygges af. Det du ser her, er den kode portalerne bruger.
             </p>
             <p className="body-sm" style={{ marginTop: 12, fontFamily: 'var(--font-mono)' }}>

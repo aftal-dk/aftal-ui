@@ -1,13 +1,13 @@
 # @aftal/ui
 
-Aftals designsystem for 2026-brandet: design tokens, fonte og de 23 React-komponenter, som alle Aftals flader bygges af. Kanonisk brand-dokumentation: [DESIGN.md](DESIGN.md).
+Aftals designsystem for 2026-brandet: design tokens, fonte og de 24 React-komponenter, som alle Aftals flader bygges af. Kanonisk brand-dokumentation: [DESIGN.md](DESIGN.md).
 
 ## Struktur
 
 ```
 styles.css     entry point - importerer alle tokens
 tokens/        colors, typography, spacing, effects, fonts, base (ren CSS custom properties)
-components/    23 komponenter: .jsx (source) + .d.ts (props) + .prompt.md (hvornår/hvordan)
+components/    24 komponenter: .jsx (source) + .d.ts (props) + .prompt.md (hvornår/hvordan)
 assets/        GoogleSansFlex.woff2, logo-lockups, medlemsmærker, fotos
 gallery/       galleri-appen (Vite) - deployes til ui.aftal.dev
 index.js       barrel export
