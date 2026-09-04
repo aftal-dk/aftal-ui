@@ -7,4 +7,4 @@ export interface UspItemProps {
   size?: number;
   style?: React.CSSProperties;
 }
-export declare function UspItem(props: UspItemProps): JSX.Element;
+export declare function UspItem(props: UspItemProps): React.JSX.Element;

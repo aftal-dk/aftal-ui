@@ -11,4 +11,4 @@ export interface RefCardProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function RefCard(props: RefCardProps): JSX.Element;
+export declare function RefCard(props: RefCardProps): React.JSX.Element;

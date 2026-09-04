@@ -7,6 +7,12 @@ export { Badge } from './components/core/Badge.jsx';
 export { Icon, PinIcon } from './components/core/Icon.jsx';
 export { Logo } from './components/core/Logo.jsx';
 
+// loading
+export { Spinner } from './components/loading/Spinner.jsx';
+export { Skeleton, SkeletonList } from './components/loading/Skeleton.jsx';
+export { LoadingBar } from './components/loading/LoadingBar.jsx';
+export { BusyLabel } from './components/loading/BusyLabel.jsx';
+
 // cards
 export { DeptCard } from './components/cards/DeptCard.jsx';
 export { CategoryCard } from './components/cards/CategoryCard.jsx';

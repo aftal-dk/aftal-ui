@@ -28,4 +28,4 @@ export interface SearchSelectProps {
   maxHeight?: number;
   style?: React.CSSProperties;
 }
-export declare function SearchSelect(props: SearchSelectProps): JSX.Element;
+export declare function SearchSelect(props: SearchSelectProps): React.JSX.Element;

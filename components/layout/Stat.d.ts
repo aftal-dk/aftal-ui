@@ -10,4 +10,4 @@ export interface StatProps {
   text?: boolean;
   style?: React.CSSProperties;
 }
-export declare function Stat(props: StatProps): JSX.Element;
+export declare function Stat(props: StatProps): React.JSX.Element;

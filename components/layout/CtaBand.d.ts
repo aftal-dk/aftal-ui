@@ -13,4 +13,4 @@ export interface CtaBandProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function CtaBand(props: CtaBandProps): JSX.Element;
+export declare function CtaBand(props: CtaBandProps): React.JSX.Element;

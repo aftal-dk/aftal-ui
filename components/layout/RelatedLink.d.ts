@@ -6,4 +6,4 @@ export interface RelatedLinkProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function RelatedLink(props: RelatedLinkProps): JSX.Element;
+export declare function RelatedLink(props: RelatedLinkProps): React.JSX.Element;
