@@ -3,6 +3,7 @@ import {
   Button, Badge, Icon, PinIcon, Logo,
   DeptCard, CategoryCard, WorkRow, RefCard, StepCard, Media,
   Field, Switch, SearchSelect, CallbackForm,
+  Spinner, Skeleton, SkeletonList, LoadingBar,
   SectionHead, CtaBand, Stat, UspItem, TrustBand, RelatedLink,
 } from '@aftal/ui';
 
@@ -28,7 +29,7 @@ const ORDRER = [
 
 const NAV = [
   ['farver', 'Farver'], ['typografi', 'Typografi'], ['core', 'Core'],
-  ['kort', 'Kort'], ['formularer', 'Formularer'], ['layout', 'Layout'],
+  ['kort', 'Kort'], ['formularer', 'Formularer'], ['indlaesning', 'Indlæsning'], ['layout', 'Layout'],
 ];
 
 function Section({ id, title, lead, children }) {
@@ -81,7 +82,7 @@ export function App() {
           <div className="wrap">
             <h1 className="h1">Aftal UI.</h1>
             <p className="body-lg" style={{ marginTop: 16, maxWidth: 640 }}>
-              Designsystemet bag det nye brand - tokens og 19 komponenter, som alle
+              Designsystemet bag det nye brand - tokens og 23 komponenter, som alle
               Aftals flader bygges af. Det du ser her, er den kode portalerne bruger.
             </p>
             <p className="body-sm" style={{ marginTop: 12, fontFamily: 'var(--font-mono)' }}>
@@ -255,6 +256,67 @@ export function App() {
           <Block label="callbackform">
             <div style={{ maxWidth: 480 }}>
               <CallbackForm lead="Fortæl os kort om opgaven - så ringer vi tilbage." withMessage />
+            </div>
+          </Block>
+        </Section>
+
+
+        <Section id="indlaesning" title="Indlæsning." lead="Fire tilstande og ikke flere. Skeleton til indhold der ikke er kommet, spinner til en handling i gang, en tynd GLØD-bar når synligt indhold opdateres. Alt venter 200 ms, så hurtige svar aldrig flimrer.">
+          <Block label="skeleton - siden beholder ramme og titel, kun indholdet er placeholder">
+            <div className="g-grid-3">
+              <div style={{ background: 'var(--tint)', border: '1px solid var(--line)', borderRadius: 18, padding: 20 }}>
+                <Skeleton width={140} height={20} />
+                <Skeleton width="70%" style={{ marginTop: 12 }} />
+                <Skeleton width="55%" style={{ marginTop: 8 }} />
+                <Skeleton height={110} radius={12} style={{ marginTop: 16 }} />
+              </div>
+              <div style={{ background: 'var(--tint)', border: '1px solid var(--line)', borderRadius: 18, padding: 20 }}>
+                <p className="body-sm" style={{ marginBottom: 14 }}>Ordrer</p>
+                <SkeletonList rows={6} />
+              </div>
+              <div style={{ background: 'var(--tint)', border: '1px solid var(--line)', borderRadius: 18, padding: 20 }}>
+                <p className="body-sm" style={{ marginBottom: 14 }}>Tagudskiftning, Gl. Hasseris</p>
+                <p className="body">Tømrerne er på pladsen fra mandag. Stillads står klar torsdag.</p>
+                <p className="body-sm" style={{ marginTop: 14 }}>Skeleton bruges kun til det, der mangler - det her kort er kommet.</p>
+              </div>
+            </div>
+          </Block>
+          <Block label="spinner - arver farve, sr-only label som standard, synlig label ved behov">
+            <div className="g-row" style={{ color: 'var(--ink-soft)' }}>
+              <Spinner delay={0} />
+              <Spinner size={24} delay={0} />
+              <Spinner label="Henter ordrer…" showLabel delay={0} />
+              <span style={{ color: 'var(--mute)', fontSize: 13 }}><Spinner size={13} label="Henter forslag…" showLabel delay={0} /></span>
+            </div>
+          </Block>
+          <Block label="button loading - label bliver, spinner foran, disabled + aria-busy">
+            <div className="g-row">
+              <Button loading>Gem</Button>
+              <Button variant="ghost" loading>Send tilbud</Button>
+              <Button size="lg" loading>Ring mig op</Button>
+              <Button disabled>Ikke tilgængelig</Button>
+            </div>
+          </Block>
+          <Block label="loadingbar - 2px GLØD i toppen af et panel der opdateres bag synligt indhold">
+            <div style={{ position: 'relative', overflow: 'hidden', background: 'var(--tint)', border: '1px solid var(--line)', borderRadius: 18, padding: 20 }}>
+              <LoadingBar delay={0} />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', rowGap: 10, columnGap: 20 }}>
+                {ORDRER.slice(0, 5).map((o) => (
+                  <React.Fragment key={o}>
+                    <span className="body">{o}</span>
+                    <span className="body-sm" style={{ fontFamily: 'var(--font-mono)' }}>520 kr/t</span>
+                  </React.Fragment>
+                ))}
+              </div>
+            </div>
+          </Block>
+          <Block label="tekst - ét verbum, ét ellipsis-tegn">
+            <div className="g-row">
+              <Badge style={{ background: 'var(--status-success-bg)', color: 'var(--status-success)' }}>Henter…</Badge>
+              <Badge style={{ background: 'var(--status-success-bg)', color: 'var(--status-success)' }}>Henter ordrer…</Badge>
+              <Badge style={{ background: 'var(--status-error-bg)', color: 'var(--status-error)' }}>Indlæser...</Badge>
+              <Badge style={{ background: 'var(--status-error-bg)', color: 'var(--status-error)' }}>Loading</Badge>
+              <Badge style={{ background: 'var(--status-error-bg)', color: 'var(--status-error)' }}>Gemmer…</Badge>
             </div>
           </Block>
         </Section>

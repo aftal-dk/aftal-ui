@@ -152,6 +152,29 @@ primary button sinks 1px. **Focus:** a 2px GLØD outline at 2px offset, on
 cross-fade. No bounce, no spring, no scroll-triggered animation. Everything
 respects `prefers-reduced-motion`.
 
+**Loading.** Four states, nothing else. (1) *Content that is not here yet*
+shows a `Skeleton` in the shape of what is coming - navigation, page title,
+filters and buttons stay put; only the content area is a placeholder. Skeletons
+are a flat 9% tint of the text colour, no shimmer, no movement. (2) *An action
+in flight* shows a `Spinner` inside the control that started it: `Button
+loading` keeps the label, puts the spinner in front of it, disables the button
+and sets `aria-busy`. The spinner is the one rotating element in the system,
+justified the way the Switch knob is: it is a state, not decoration, and under
+`prefers-reduced-motion` it is a static arc. (3) *Data refreshing behind content
+that is already visible* shows a 2px GLØD `LoadingBar` along the top of the
+panel; visible content is never covered or dimmed. (4) *A route chunk loading*
+uses the framework fallback (`loading.tsx`, `Suspense`) with the same page
+skeleton, so navigation and first data do not show two different waits.
+
+Every loading element waits 200ms before it appears, so a fast response never
+flickers. Text only where a skeleton makes no sense (a status line, a short list
+of options): one verb, *Henter…* with the single ellipsis character (U+2026),
+optionally followed by the object - *Henter ordrer…*. Never *Indlæser*,
+*Loading* or *Vent venligst*, and a button label never changes while loading.
+Every loading element carries `role="status"` and a screen-reader label. Never
+an inline icon with `animate-spin`, never a pulsing text placeholder, never an
+empty screen while waiting - the auth gate included.
+
 **Transparency and blur** appear twice: the sticky header (80–94% ground +
 14px blur) and the cookie overlay (55% black + 3px blur). Nowhere else.
 
@@ -206,6 +229,7 @@ from the live site are kept in `assets/logo/legacy/` for reference.
 - **core** — `Button`, `Badge`, `Icon` (+ `PinIcon`), `Logo`
 - **cards** — `DeptCard`, `CategoryCard`, `WorkRow`, `RefCard`, `StepCard`, `Media`
 - **forms** — `Field`, `Switch`, `SearchSelect`, `CallbackForm`
+- **loading** — `Spinner`, `Skeleton` (+ `SkeletonList`), `LoadingBar`
 - **layout** — `SectionHead`, `CtaBand`, `Stat`, `UspItem`, `TrustBand`, `RelatedLink`
 
 Every component has a sibling `.d.ts` (props) and `.prompt.md` (when and how to

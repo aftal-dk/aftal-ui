@@ -14,6 +14,8 @@ export interface ButtonProps {
   href?: string;
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
+  /** Action in flight: spinner in front of the label, disabled, aria-busy. Keep the label as it was ("Gem", not "Gemmer…"). */
+  loading?: boolean;
   onClick?: (e: React.MouseEvent) => void;
   style?: React.CSSProperties;
   /** Label, usually followed by <Icon name="arrow" />. */

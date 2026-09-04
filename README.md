@@ -1,13 +1,13 @@
 # @aftal/ui
 
-Aftals designsystem for 2026-brandet: design tokens, fonte og de 19 React-komponenter, som alle Aftals flader bygges af. Kanonisk brand-dokumentation: [DESIGN.md](DESIGN.md).
+Aftals designsystem for 2026-brandet: design tokens, fonte og de 23 React-komponenter, som alle Aftals flader bygges af. Kanonisk brand-dokumentation: [DESIGN.md](DESIGN.md).
 
 ## Struktur
 
 ```
 styles.css     entry point - importerer alle tokens
 tokens/        colors, typography, spacing, effects, fonts, base (ren CSS custom properties)
-components/    19 komponenter: .jsx (source) + .d.ts (props) + .prompt.md (hvornår/hvordan)
+components/    23 komponenter: .jsx (source) + .d.ts (props) + .prompt.md (hvornår/hvordan)
 assets/        GoogleSansFlex.woff2, logo-lockups, medlemsmærker, fotos
 gallery/       galleri-appen (Vite) - deployes til ui.aftal.dev
 index.js       barrel export
@@ -46,3 +46,4 @@ Galleriet importerer pakken direkte fra repo-roden, så det viser altid den aktu
 - Aldrig hardkodede farver i apps - kun tokens.
 - Designændringer laves HER først og rulles derefter ud til apps.
 - Al dansk tekst i komponenter/eksempler følger brandreglerne i DESIGN.md (sentence case, ingen tankestreger, tagline ordret).
+- Loading-tilstande bygges KUN af `Spinner`, `Skeleton`/`SkeletonList`, `LoadingBar` og `Button loading` (se "Loading" i DESIGN.md). Aldrig `Loader2` + `animate-spin`, aldrig pulserende tekst, aldrig tom skærm. Teksten er altid "Henter…" med ét ellipsis-tegn.
