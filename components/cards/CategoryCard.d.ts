@@ -10,4 +10,4 @@ export interface CategoryCardProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function CategoryCard(props: CategoryCardProps): JSX.Element;
+export declare function CategoryCard(props: CategoryCardProps): React.JSX.Element;

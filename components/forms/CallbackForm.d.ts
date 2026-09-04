@@ -18,4 +18,4 @@ export interface CallbackFormProps {
   onSubmit?: (data: FormData) => void;
   style?: React.CSSProperties;
 }
-export declare function CallbackForm(props: CallbackFormProps): JSX.Element;
+export declare function CallbackForm(props: CallbackFormProps): React.JSX.Element;

@@ -17,7 +17,7 @@ export interface SkeletonProps extends React.HTMLAttributes<HTMLSpanElement> {
   style?: React.CSSProperties;
 }
 
-export declare function Skeleton(props: SkeletonProps): JSX.Element;
+export declare function Skeleton(props: SkeletonProps): React.JSX.Element;
 
 /**
  * A column of text-like rows with varying widths, announced as loading to
@@ -37,4 +37,4 @@ export interface SkeletonListProps extends React.HTMLAttributes<HTMLDivElement> 
   style?: React.CSSProperties;
 }
 
-export declare function SkeletonList(props: SkeletonListProps): JSX.Element;
+export declare function SkeletonList(props: SkeletonListProps): React.JSX.Element;

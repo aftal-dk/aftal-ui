@@ -14,4 +14,4 @@ export interface LoadingBarProps extends React.HTMLAttributes<HTMLSpanElement> {
   style?: React.CSSProperties;
 }
 
-export declare function LoadingBar(props: LoadingBarProps): JSX.Element | null;
+export declare function LoadingBar(props: LoadingBarProps): React.JSX.Element | null;

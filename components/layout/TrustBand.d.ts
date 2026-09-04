@@ -8,4 +8,4 @@ export interface TrustBandProps {
   text?: string;
   style?: React.CSSProperties;
 }
-export declare function TrustBand(props: TrustBandProps): JSX.Element;
+export declare function TrustBand(props: TrustBandProps): React.JSX.Element;

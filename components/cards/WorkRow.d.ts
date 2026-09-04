@@ -15,4 +15,4 @@ export interface WorkRowProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function WorkRow(props: WorkRowProps): JSX.Element;
+export declare function WorkRow(props: WorkRowProps): React.JSX.Element;

@@ -14,4 +14,4 @@ export interface DeptCardProps {
   href?: string;
   style?: React.CSSProperties;
 }
-export declare function DeptCard(props: DeptCardProps): JSX.Element;
+export declare function DeptCard(props: DeptCardProps): React.JSX.Element;

@@ -12,4 +12,4 @@ export interface MediaProps {
   label?: string;
   style?: React.CSSProperties;
 }
-export declare function Media(props: MediaProps): JSX.Element;
+export declare function Media(props: MediaProps): React.JSX.Element;

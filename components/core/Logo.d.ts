@@ -19,4 +19,4 @@ export interface LogoProps {
   alt?: string;
   style?: React.CSSProperties;
 }
-export declare function Logo(props: LogoProps): JSX.Element;
+export declare function Logo(props: LogoProps): React.JSX.Element;

@@ -22,4 +22,4 @@ export interface ButtonProps {
   children?: React.ReactNode;
 }
 
-export declare function Button(props: ButtonProps): JSX.Element;
+export declare function Button(props: ButtonProps): React.JSX.Element;

@@ -17,4 +17,4 @@ export interface SpinnerProps extends Omit<React.HTMLAttributes<HTMLSpanElement>
   style?: React.CSSProperties;
 }
 
-export declare function Spinner(props: SpinnerProps): JSX.Element;
+export declare function Spinner(props: SpinnerProps): React.JSX.Element;
