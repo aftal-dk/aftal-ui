@@ -141,6 +141,11 @@ structural work. The house card is `--tint` fill (2.5%) plus a hairline plus an
 dialogs). Radii: 8 inputs, 10 buttons, 12 thumbnails, 14 dropdowns, 16 reference
 cards, 18 cards, 100 pills.
 
+**Print and PDF.** On paper the page is white, like the paper itself, not the
+KALK screen ground. Cream is only an accent, for example the fill of an info
+box. Boxes are never framed by a marked black border; use the fill or a
+hairline as on screen.
+
 **Hover.** Colour fades only - elements never move, grow or slide on hover.
 Cards tint GLØD 6% and turn their border GLØD 45%; list rows tint GLØD 5%;
 arrows stay put; links go from
