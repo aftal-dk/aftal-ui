@@ -135,6 +135,10 @@ are separated by a single hairline — or by the full-bleed GLØD band, which is
 the one page breaker. Grids are 3-up (departments, references, steps), 2-up
 (categories, contact) or a dense list of rows (services).
 
+**Wide tables.** A table wider than its container scrolls sideways inside its
+own wrapper, never the page. While there is more to see, a soft shadow on the
+right edge shows it, and it fades out when the user reaches the end.
+
 **Borders and elevation.** A hairline at 10% and a stronger one at 17% do the
 structural work. The house card is `--tint` fill (2.5%) plus a hairline plus an
 18px radius — no shadow. Shadows exist only to float white panels (dropdowns,
