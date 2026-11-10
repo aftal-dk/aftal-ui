@@ -54,6 +54,14 @@ data), *Samlende* (many trades under one roof, one point of contact),
 **Casing.** Sentence case everywhere. No ALL-CAPS labels, no uppercase eyebrows,
 no Title Case On Buttons. The only capitals are proper nouns and "Aftal".
 
+**No eyebrows.** No small label above a heading, in any case or colour. The
+heading carries the label itself, for example a question as the heading with the
+answer as a short line under it.
+
+**Numbering.** Two-digit numbers (01, 02) belong to chapters. Cards, steps or
+points inside a chapter use letters: "A. Hvad er formålet?". The letter is part
+of the heading, the same size, followed by an ordinary space.
+
 **Headlines** are short statements that end in a full stop, often a pair:
 
 > Vi udvikler, bygger og drifter ejendomme – uden overraskelser. **Det er en Aftal.**
@@ -61,6 +69,9 @@ no Title Case On Buttons. The only capitals are proper nouns and "Aftal".
 > Alt samlet ét sted.
 > Mennesker, der møder op.
 > Op til tiden. Ned til tiden.
+
+When several such statements stand together in a box, each sentence gets its
+own line.
 
 **Body copy** is two or three sentences, concrete, with the customer's benefit
 first: "Med Aftal har du én fast part gennem hele ejendommens liv. Det betyder
@@ -107,7 +118,8 @@ check marks, arrows, active nav, the full-bleed CTA band, and as 10%/32% tints
 for fills and hairlines. TEGLSTEN `#B84C32` is the print-only equivalent — never
 use it on screen. SKIFFER `#8F887C` is the neutral. Never more than one
 saturated surface per screen. Status colours are muted and earth-leaning so they
-cannot compete with GLØD.
+cannot compete with GLØD. Text on a dark box is light; GLØD is not used as the
+text colour of a statement on dark.
 
 **Type.** Google Sans Flex carries everything, weight 500 for display and 400
 for body; headings are tight (-0.024 to -0.03em) and set at 1.02–1.15 line
@@ -180,6 +192,10 @@ empty screen while waiting - the auth gate included.
 
 **Fixed elements.** The sticky header, and the floating dock bottom-right
 (theme toggle + cookie settings) as a single pill.
+
+**Small screens.** A card never splits a label and its text into two columns
+on a phone. The label sits as a short line above, and the text uses the full
+width of the card.
 
 ---
 
