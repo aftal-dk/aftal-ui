@@ -72,6 +72,13 @@ mindre koordinering for dig – og at intet falder mellem to stole."
 **Numbers** are real and few: 9 faste folk · 3 afdelinger · 40+ ejendomme i
 drift · 450+ lejemål.
 
+**Figures in budgets and reports.** Every amount shows where it comes from: the
+budget line, account, invoice or assumption behind it, next to the amount or one
+click away. An amount nobody can trace is not shown. When there are two or more
+scenarios, they stand side by side as columns under each section, never behind
+filters or toggles, and there is no single result line that quietly picks one of
+them.
+
 **Buttons** are verb-first and lowercase after the first word: "Få et
 uforpligtende tilbud", "Bliv ringet op", "Ring mig op", "Læs mere", "Se vores
 ydelser", "Kontakt os".
