@@ -77,7 +77,15 @@ budget line, account, invoice or assumption behind it, next to the amount or one
 click away. An amount nobody can trace is not shown. When there are two or more
 scenarios, they stand side by side as columns under each section, never behind
 filters or toggles, and there is no single result line that quietly picks one of
-them.
+them. The source sits behind a small round "i" next to the post and shows on
+hover, never as a grey button or as text written out in the row. Scenario
+columns look alike: none is tinted as if it were the chosen one, and the
+columns of one scenario stand under a shared group heading.
+
+**Reports for owners and investors** must stand on their own: the reader
+understands everything without the author there to explain. Each section
+explains something or adds knowledge the reader needs, or it goes. Sections run
+from the conclusion to the detail, in the order a reader needs them.
 
 **Buttons** are verb-first and lowercase after the first word: "Få et
 uforpligtende tilbud", "Bliv ringet op", "Ring mig op", "Læs mere", "Se vores
