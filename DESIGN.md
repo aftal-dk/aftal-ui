@@ -148,6 +148,22 @@ arrows stay put; links go from
 primary button sinks 1px. **Focus:** a 2px GLØD outline at 2px offset, on
 `:focus-visible` only. Inputs swap their border to GLØD and lift the fill; their labels rest full-size inside the field and float up to an 11px label when the field is active or filled.
 
+**Data tables.** Columns of numbers are separated by a thin grey line at the
+10% hairline, so each column reads on its own. A row that names a group, such
+as a heading for one kind of cost, spans all columns without column lines and
+stands apart from the rows under it. Columns that sum or average the others
+(Total, Gns./md.) sit between thin solid lines, and the columns they sum are
+divided by a lighter dashed line, so the line type shows what adds up. The
+total column is bold, header included. A status such as *Skøn* or *Kendt* is
+shown as a colour on the text or its background, never as a dot next to it.
+On hover, only the row and the column under the pointer are tinted, never
+other cells. A tinted column at the right edge keeps padding on both sides,
+so its numbers never touch the edge of the tint. Every table, and every box
+of key figures, has a rule in the border colour at the top and at the bottom.
+Sub-rows under a post are folded away from the start and open with a click on
+the post, which carries a small arrow. Months in rows, buttons and chart axes
+are short: "Nov 26", "Dec 26".
+
 **Motion.** 120–200ms on `cubic-bezier(0.4, 0, 0.2, 1)`, 300ms for the theme
 cross-fade. No bounce, no spring, no scroll-triggered animation. Everything
 respects `prefers-reduced-motion`.
