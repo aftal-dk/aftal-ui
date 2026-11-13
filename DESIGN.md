@@ -158,7 +158,11 @@ total column is bold, header included. A status such as *Skøn* or *Kendt* is
 shown as a colour on the text or its background, never as a dot next to it.
 On hover, only the row and the column under the pointer are tinted, never
 other cells. A tinted column at the right edge keeps padding on both sides,
-so its numbers never touch the edge of the tint.
+so its numbers never touch the edge of the tint. Every table, and every box
+of key figures, has a rule in the border colour at the top and at the bottom.
+Sub-rows under a post are folded away from the start and open with a click on
+the post, which carries a small arrow. Months in rows, buttons and chart axes
+are short: "Nov 26", "Dec 26".
 
 **Motion.** 120–200ms on `cubic-bezier(0.4, 0, 0.2, 1)`, 300ms for the theme
 cross-fade. No bounce, no spring, no scroll-triggered animation. Everything
