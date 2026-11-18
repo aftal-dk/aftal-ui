@@ -162,7 +162,10 @@ so its numbers never touch the edge of the tint. Every table, and every box
 of key figures, has a rule in the border colour at the top and at the bottom.
 Sub-rows under a post are folded away from the start and open with a click on
 the post, which carries a small arrow. Months in rows, buttons and chart axes
-are short: "Nov 26", "Dec 26".
+are short: "Nov 26", "Dec 26". All tables on a page share one type
+scale, and the small size is the standard: 12px in the cells, 10px in the
+column headers, and the same row height in every table. A wide table does not
+get its own smaller size.
 
 **Motion.** 120–200ms on `cubic-bezier(0.4, 0, 0.2, 1)`, 300ms for the theme
 cross-fade. No bounce, no spring, no scroll-triggered animation. Everything
