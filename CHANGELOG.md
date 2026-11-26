@@ -12,7 +12,7 @@ Det skal forbrugere gøre, når de flytter deres lås til 0.3.0:
 - **`data-dept` virker ikke længere.** Attributten har ingen regler, så `data-dept="byggeri"` og `data-dept="drift"` giver det almindelige Glød. Fjern attributten. Afdelingen skrives som tekst eller et neutralt mærke.
 - **Drift var violet (`#7a4dff`), og den farve er væk.** Hvor en app brugte `--drift*` eller `--violet` til noget synligt, bliver det nu Glød. Find og ret stederne, så afdelingen ikke afhænger af farve.
 - **Gabarito findes kun i vægt 600.** Filerne `assets/fonts/Gabarito-500.woff2`, `Gabarito-700.woff2` og `Gabarito-800.woff2` er slettet, og deres `@font-face` er fjernet. Henvis til `assets/fonts/Gabarito-600.woff2`. Kode, der beder om 700 eller 800 på Gabarito, får 600.
-- **`Badge`, `Button` og `Field` bruger altid brødtekstens skrift** (før arvede de skriften fra omgivelserne, så et mærke i en overskrift blev Gabarito).
+- **`Badge`, `Button` og `Field` bruger altid brødtekstens skrift** (før arvede de skriften fra omgivelserne, så et mærke i en overskrift blev Gabarito). Skal en knap med vilje have en anden skrift, sættes den med `style={{ fontFamily: ... }}` på `Button`. På `Field` går `style` til den omsluttende div, så feltets skrift ikke kan ændres ad den vej.
 - **`--status-info` i lyst tema er ændret** fra `#376181` (0.2.0) til brandets `#3f6f8f`.
 - **Overskrifter er lettere.** `.h1` til `.h4`, `Stat`, `CtaBand`, `DeptCard`, `CategoryCard`, `RefCard`, `StepCard`, `WorkRow` og `CallbackForm` bruger vægt 600 (før 800 eller 700). Hierarkiet kommer fra størrelsen. `.h2` har linjehøjde 1,1 (før 1,06) og `.h3` 1,1 (før 1,15).
 - **Logofilerne har nyt udseende.** Filnavnene er de samme, men ordet Aftal' er tegnet ud fra Gabarito 600, og ikoner og favicon er skiftet. Hvor en app har kopieret `assets/logo` og `assets/favicon`, skal de kopieres igen.
@@ -27,9 +27,13 @@ Det skal forbrugere gøre, når de flytter deres lås til 0.3.0:
 - En `Logo` uden variant inde i `data-surface="glod"` (eller `.section--glod`) er hvid i begge temaer.
 - Galleriet viser typografi i 600, begge appikoner og logoet på en Glød-flade.
 
+### Regler i DESIGN.md
+
+Nye afsnit, som ikke ændrer kode: ingen eyebrows over overskrifter (hverken tekst, tal eller ikon), nummerering med tal til kapitler og bogstaver til punkter, kort på små skærme, brede tabeller, datatabeller, tal i budgetter og rapporter, og rapporter til ejere og investorer.
+
 ### Bevaret, så intet går i stykker
 
-- `Logo` tager stadig varianterne `byggeri`, `udvikling` og `drift` og viser det almindelige logo. `DeptCard` har uændrede props (`name`, `tag`, `description`, `href`) og viser afdelingen som tekst.
+- `Logo` tager stadig varianterne `byggeri`, `udvikling` og `drift` og viser det almindelige logo. `DeptCard` har uændrede props (`name`, `tag`, `description`, `href`) og viser afdelingen som tekst. Giv `name` afdelingens navn alene, fx "Byggeri", og fjern "Aftal" foran, hvis appen har det med.
 - Overgangsnavnene og `--brand*` er sat i en regel, der gælder begge temaer, så de også følger et `data-theme` på et indre element.
 - `--byggeri`, `--byggeri-hover`, `--byggeri-text`, `--byggeri-soft`, `--byggeri-line`, `--drift`, `--drift-hover`, `--drift-text`, `--drift-soft`, `--drift-line` og `--on-dept` findes stadig i `tokens/colors.css` som overgangsnavne, der peger på `--accent*` og `--accent-ink`. `--violet` peger på `--accent`. Brug dem ikke i ny kode.
 - `--font-accent`, `--brand*`, `--kalk`, `--skiffer`, `--teglsten`, `--brand-print` og `--kulsort` er uændrede overgangsnavne fra 0.2.0.
