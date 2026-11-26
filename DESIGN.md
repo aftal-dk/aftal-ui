@@ -1,7 +1,8 @@
 # Aftal Design System
 
 Aftal ApS is a Danish property company based in Støvring, Nordjylland. Aftal
-bygger og drifter ejendomme through two departments: **Byggeri** and **Drift**.
+bygger og drifter ejendomme through two departments: **Byggeri** and **Drift**,
+which are named in words and have no colour of their own.
 The name is the promise. The tagline is *Når en aftal' er en aftal'*: a deal is
 a deal, a North Jutland value. We show up, and we do what we said. The strategy
 line is *En ny standard for ejendomme.*
@@ -75,21 +76,25 @@ text on the dark ground, so small text and links in the brand colour use
   mean a state, and the state is always written. They are muted so they are not
   mistaken for Glød. In the light theme `--status-warning` is darker than in the
   dark theme so that it stays readable as text.
-- **Drift colour is not final.** The department switch exists (`data-dept` and
-  the `--drift*` tokens), but nothing in this library or its gallery uses it.
-  Do not set `data-dept="drift"` in new work until the colour is decided.
+- **Departments have no colour.** Byggeri and Drift are shown as plain text or
+  a neutral badge, never with a colour and never in the logo. `data-dept` is not
+  used, and the former Violet (`#7a4dff`) is retired because it sat too close to
+  the AI colour. The old `--byggeri*`, `--drift*`, `--on-dept` and `--violet`
+  names still resolve, to the accent, so older code keeps working; do not use
+  them in new work.
 - At most one saturated surface per screen. Flat colour only: no gradients as
   decoration, no patterns. No information boxes with a coloured side line.
 
 **Type.**
 | Role | Face | Weight |
 | --- | --- | --- |
-| Headings, key figures | Gabarito | 800 (hero, h1, h2, stat), 700 (h3, h4) |
+| Headings, key figures | Gabarito | 600 at every level |
 | Body text and UI | Google Sans Flex | 400, 500, 600 |
 | Numbers and code | Google Sans Code | 400 |
 
-Headings are tight (line height 1.04 to 1.1, tracking -0.02em); body text is
-airy (1.6). Gabarito is never used for long text or dense tables. Gabarito and
+Hierarchy comes from size, not weight: Gabarito is only used in 600, the same
+weight as the logo. Headings are tight (line height 1.04 to 1.1, tracking
+-0.02em); body text is airy (1.6). Gabarito is never used for long text or dense tables. Gabarito and
 Google Sans Flex are served from `assets/fonts` (SIL Open Font License);
 Google Sans Code is loaded from Google Fonts.
 
@@ -136,19 +141,24 @@ the single ellipsis character, optionally followed by the object. Never
 
 ## LOGO
 
-The logo is the word **Aftal'**, drawn from Gabarito bold, as a single-colour
-SVG in `assets/logo/`.
+The logo is the word **Aftal'**, drawn from Gabarito 600, as a single-colour
+SVG in `assets/logo/`. There is one logo, and departments are never written
+together with it. The f and t share a crossbar, and the apostrophe is always
+part of the logo.
 
 | File | Use |
 | --- | --- |
 | `aftal-logo-hvid.svg` | Main logo on dark grounds and on Glød. |
 | `aftal-logo-sort.svg` | Main logo on light grounds. |
 | `aftal-ikon-hvid.svg`, `aftal-ikon-sort.svg` | The icon (A with apostrophe), no background. |
-| `aftal-appikon.svg` | The icon on a dark tile. |
+| `aftal-appikon.svg` | The icon on a Glød tile. |
+| `aftal-appikon-sort.svg` | The icon on a black tile. |
 
 The `Logo` component renders these files; `Logo` with no variant follows the
-theme. The logo is always one colour, never redrawn, set as text, stretched,
-rotated or shadowed. Clear space is about half the logo's height. Under 10px
+theme. The logo is always one colour (white on dark and on Glød, black on light), never
+redrawn, set as text, stretched, rotated, shadowed or recoloured. Glød is the
+colour around the logo, never in it. Clear space is about half the logo's
+height. Under 10px
 height use the icon. Favicon and touch icons are in `assets/favicon/`.
 
 ---
@@ -171,7 +181,7 @@ No icon font, no emoji.
 | Path | What it is |
 | --- | --- |
 | `styles.css` | Global entry point, imports only |
-| `tokens/` | `colors.css`, `departments.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`, `base.css` |
+| `tokens/` | `colors.css`, `typography.css`, `spacing.css`, `effects.css`, `fonts.css`, `base.css` |
 | `components/` | React components, each with `.d.ts` and `.prompt.md` |
 | `assets/` | Fonts, logo SVGs, favicon, membership marks, photos |
 | `gallery/` | The gallery app, built with Vite |
@@ -188,4 +198,5 @@ No icon font, no emoji.
 Components read colour only through tokens, and from the active colour through
 `--accent`, `--accent-ink`, `--accent-hover`, `--accent-text`, `--accent-soft`
 and `--accent-line`. The older `--brand*` names still work and follow the
-accent.
+accent. AI content is marked with `--ai`, `--ai-soft` and `--ai-line`, or with
+the helper classes `.ai-label` and `.ai-surface`.

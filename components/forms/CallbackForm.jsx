@@ -20,7 +20,7 @@ export function CallbackForm({ title = 'Vi ringer dig op.', lead, scope = 'Ikke 
       <div style={card}>
         <div style={{ textAlign: 'center', padding: '28px 8px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }} role="status" aria-live="polite">
           <span style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent)', color: 'var(--accent-ink)', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}><Icon name="check" size={22} /></span>
-          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 24, lineHeight: 1.15, letterSpacing: '-0.02em', color: 'var(--ink)', margin: 0 }}>Tak for din besked.</h3>
+          <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', fontSize: 24, lineHeight: 1.15, letterSpacing: '-0.02em', color: 'var(--ink)', margin: 0 }}>Tak for din besked.</h3>
           <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-soft)', margin: 0 }}>Vi vender tilbage inden for 24 timer - oftest samme dag.</p>
         </div>
       </div>
@@ -29,7 +29,7 @@ export function CallbackForm({ title = 'Vi ringer dig op.', lead, scope = 'Ikke 
   return (
     <div style={card}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 10, paddingBottom: 18, borderBottom: '1px solid var(--line)' }}>
-        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 24, lineHeight: 1.15, letterSpacing: '-0.02em', color: 'var(--ink)', margin: 0 }}>{title}</h3>
+        <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', fontSize: 24, lineHeight: 1.15, letterSpacing: '-0.02em', color: 'var(--ink)', margin: 0 }}>{title}</h3>
         {lead ? <p style={{ fontSize: 14, lineHeight: 1.55, color: 'var(--ink-soft)', margin: 0 }}>{lead}</p> : null}
       </div>
       <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>

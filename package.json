@@ -1,6 +1,6 @@
 {
   "name": "@aftal/ui",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Aftal design system - tokens, fonts and React components for the Aftal brand",
   "private": true,
   "type": "module",

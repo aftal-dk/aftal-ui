@@ -7,7 +7,7 @@ export function StepCard({ title, children, style }) {
       display: 'flex', flexDirection: 'column', gap: 8, padding: '26px 26px 24px',
       border: '1px solid var(--line)', borderRadius: 'var(--radius-3xl)', background: 'var(--tint)',
     }, style)}>
-      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 19, letterSpacing: '-0.012em', color: 'var(--ink)', margin: 0 }}>{title}</h3>
+      <h3 style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', fontSize: 19, letterSpacing: '-0.012em', color: 'var(--ink)', margin: 0 }}>{title}</h3>
       <p style={{ fontSize: 15, lineHeight: 1.55, color: 'var(--ink-soft)', margin: 0 }}>{children}</p>
     </div>
   );

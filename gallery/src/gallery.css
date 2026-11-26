@@ -89,7 +89,7 @@
 
 /* AI marking - the AI colour, always with words */
 .g-ai-box {
-  max-width: 520px; background: var(--ai-soft); border: 1px solid var(--ai-line);
+  max-width: 520px;
   border-radius: var(--radius-3xl); padding: 20px 24px; display: flex; flex-direction: column; gap: 10px;
 }
-.g-ai-tag { color: var(--ai); font-size: 14px; font-weight: 600; }
+.g-ai-tag { font-size: 14px; font-weight: 600; }

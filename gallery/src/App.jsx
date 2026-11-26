@@ -162,8 +162,8 @@ export function App() {
             </div>
           </Block>
           <Block label="ai - lilla markerer det, en agent har skrevet eller foreslår, og står altid med ord">
-            <div className="g-ai-box">
-              <span className="g-ai-tag">Forslag fra agent</span>
+            <div className="g-ai-box ai-surface">
+              <span className="g-ai-tag ai-label">Forslag fra agent</span>
               <p className="body">Tagudskiftningen kan holde tidsplanen, hvis stilladset står torsdag.</p>
             </div>
           </Block>
@@ -177,17 +177,17 @@ export function App() {
           </Block>
         </Section>
 
-        <Section id="typografi" title="Typografi." lead="Overskrifter i Gabarito 800 og 700. Brødtekst og brugerflade i Google Sans Flex. Tal og kode i Google Sans Code.">
-          <Block label="h1 - gabarito 800">
+        <Section id="typografi" title="Typografi." lead="Overskrifter i Gabarito 600 på alle niveauer, og hierarkiet skabes med størrelse. Brødtekst og brugerflade i Google Sans Flex. Tal og kode i Google Sans Code.">
+          <Block label="h1 - gabarito 600, 72px">
             <p className="h1">Op til tiden. Ned til tiden.</p>
           </Block>
-          <Block label="h2 - gabarito 800">
+          <Block label="h2 - gabarito 600, 44px">
             <p className="h2">To afdelinger, ét hold.</p>
           </Block>
-          <Block label="h3 - gabarito 700">
+          <Block label="h3 - gabarito 600, 28px">
             <p className="h3">Alt samlet ét sted.</p>
           </Block>
-          <Block label="h4 - gabarito 700">
+          <Block label="h4 - gabarito 600, 20px">
             <p className="h4">Vi møder op, og vi gør det, vi har sagt.</p>
           </Block>
           <Block label="brødtekst - google sans flex 400">
@@ -240,10 +240,14 @@ export function App() {
               <Logo variant="white" height={38} />
               <Logo variant="icon-white" height={34} />
               <Logo variant="app" height={48} />
+              <Logo variant="app-black" height={48} />
             </div>
             <div className="g-light-tile" style={{ marginTop: 16 }}>
               <Logo variant="black" height={38} />
               <Logo variant="icon-black" height={34} />
+            </div>
+            <div className="g-brand-tile" style={{ marginTop: 16, justifyContent: 'flex-start' }}>
+              <Logo variant="white" height={38} />
             </div>
           </Block>
         </Section>

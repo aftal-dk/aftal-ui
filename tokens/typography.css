@@ -1,5 +1,5 @@
 /* ============================================================================
-   Typography. Gabarito (800 and 700) is for headings and key figures, Google
+   Typography. Gabarito (600 only) is for headings and key figures, Google
    Sans Flex for body text and UI, Google Sans Code for numbers and code.
    Gabarito is never used for long text or dense tables.
    ============================================================================ */
@@ -43,10 +43,10 @@
   --tracking-h4:   -0.012em; /* @kind font */
   --tracking-flat: 0; /* @kind font */
 
-  /* Weights. Headings are Gabarito 800 (hero, h1, h2, stat) and 700 (h3, h4). */
+  /* Weights. Headings are Gabarito 600 at every level; hierarchy comes from size. */
   --weight-regular: 400;
   --weight-medium:  500;
   --weight-semi:    600;
-  --weight-display-heavy: 800; /* @kind font */
-  --weight-display:       700; /* @kind font */
+  --weight-display:       600; /* @kind font */
+  --weight-display-heavy: var(--weight-display); /* @kind font */   /* retired (was 800), now 600 */
 }

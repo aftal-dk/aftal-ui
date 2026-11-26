@@ -83,6 +83,21 @@
   --kalk:        var(--hvid);   /* was the off-white ground */
   --kulsort:     var(--sort);   /* was black */
 
+  /* Department colours are gone (0.3.0). The old names resolve to the accent so
+     nothing breaks; departments are shown as text or a neutral badge. Do not use. */
+  --on-dept:        var(--accent-ink);
+  --byggeri:        var(--accent);
+  --byggeri-hover:  var(--accent-hover);
+  --byggeri-text:   var(--accent-text);
+  --byggeri-soft:   var(--accent-soft);
+  --byggeri-line:   var(--accent-line);
+  --drift:          var(--accent);
+  --drift-hover:    var(--accent-hover);
+  --drift-text:     var(--accent-text);
+  --drift-soft:     var(--accent-soft);
+  --drift-line:     var(--accent-line);
+  --violet:         var(--accent);  /* retired colour */
+
   color-scheme: dark;
 }
 

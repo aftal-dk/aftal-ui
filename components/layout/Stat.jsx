@@ -5,7 +5,7 @@ export function Stat({ value, label, text = false, style }) {
   return (
     <div style={Object.assign({ display: 'flex', flexDirection: 'column', gap: 6 }, style)}>
       <span style={{
-        fontFamily: 'var(--font-display)', fontWeight: 800, lineHeight: 1, letterSpacing: '-0.02em',
+        fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', lineHeight: 1, letterSpacing: '-0.02em',
         fontSize: text ? 'clamp(20px, 2.2vw, 28px)' : 'clamp(34px, 4vw, 52px)',
         color: text ? 'var(--accent-text)' : 'var(--ink)',
       }}>{value}</span>

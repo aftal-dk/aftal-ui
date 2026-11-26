@@ -9,7 +9,8 @@ const FILE = {
   black: '/logo/aftal-logo-sort.svg',
   'icon-white': '/logo/aftal-ikon-hvid.svg',
   'icon-black': '/logo/aftal-ikon-sort.svg',
-  app: '/logo/aftal-appikon.svg',
+  app: '/logo/aftal-appikon.svg',            // the icon on a Glød tile
+  'app-black': '/logo/aftal-appikon-sort.svg', // the icon on a black tile
 };
 
 // `primary` and `icon` follow the theme: both files are rendered inside one
@@ -19,9 +20,9 @@ const FILE = {
 // tokens/base.css) swaps which of the two is visible.
 const AUTO = { primary: ['white', 'black'], icon: ['icon-white', 'icon-black'] };
 
-/** The Aftal' logo. Never rebuild it in markup or set it as text - always the file.
- *  The department variants (byggeri, udvikling, drift) are retired: the new
- *  brand has no department lockup files, so they render the plain logo. */
+/** The Aftal' logo (the word drawn from Gabarito 600). Never rebuild it in markup or set it as text - always the file.
+ *  There is one logo: departments are never written together with it. The old
+ *  department variants (byggeri, udvikling, drift) still work and render the plain logo. */
 export function Logo({ variant = 'primary', height = 40, src, alt = 'Aftal', className, style, ...rest }) {
   const h = typeof height === 'string' && /^\d+$/.test(height) ? Number(height) : height; // x-import attrs arrive as strings
   // Size keys in `style` belong to the image(s), as they did when the logo was a single <img>;
