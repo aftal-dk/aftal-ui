@@ -105,6 +105,9 @@ a, button, input, select, textarea { touch-action: manipulation; }
 
 /* The logo follows the theme: the Logo component renders the white and the
    black file, hides the black one inline, and the light theme swaps them.
-   !important is needed to beat that inline default. */
+   !important is needed to beat that inline default. On a Glød surface the logo
+   is white in both themes, so these rules come last and win. */
 [data-theme="light"] .aftal-logo__img--on-light { display: block !important; }
 [data-theme="light"] .aftal-logo__img--on-dark { display: none !important; }
+[data-surface="glod"] .aftal-logo__img--on-light, .section--glod .aftal-logo__img--on-light { display: none !important; }
+[data-surface="glod"] .aftal-logo__img--on-dark, .section--glod .aftal-logo__img--on-dark { display: block !important; }

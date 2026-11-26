@@ -74,8 +74,16 @@ text on the dark ground, so small text and links in the brand colour use
   label always says in words that it is from an AI.
 - **Status colours** (`--status-success`, `-error`, `-warning`, `-info`) only
   mean a state, and the state is always written. They are muted so they are not
-  mistaken for Glød. In the light theme `--status-warning` is darker than in the
-  dark theme so that it stays readable as text.
+  mistaken for Glød.
+- **Where the light theme differs from the brand kit.** Two status tokens in the
+  light theme are darker than the kit's value, so that small text reaches 4.5:1
+  on white and on `#f4f4f4`. The other tokens, including `--status-info`, are the
+  kit's.
+
+  | Token (light) | Kit value | Library value | Kit value, contrast on white / `#f4f4f4` | Library value, contrast on white / `#f4f4f4` |
+  | --- | --- | --- | --- | --- |
+  | `--status-success` | `#3e7d5a` | `#356c4e` | 4.90:1 / 4.45:1 | 6.16:1 / 5.61:1 |
+  | `--status-warning` | `#c98a1e` | `#8f5f0a` | 2.94:1 / 2.68:1 | 5.51:1 / 5.01:1 |
 - **Departments have no colour.** Byggeri and Drift are shown as plain text or
   a neutral badge, never with a colour and never in the logo. `data-dept` is not
   used, and the former Violet (`#7a4dff`) is retired because it sat too close to
@@ -155,7 +163,8 @@ part of the logo.
 | `aftal-appikon-sort.svg` | The icon on a black tile. |
 
 The `Logo` component renders these files; `Logo` with no variant follows the
-theme. The logo is always one colour (white on dark and on Glød, black on light), never
+theme. The logo is always one colour (white on dark and on Glød, black on light; a
+`Logo` without variant inside `data-surface="glod"` is white in both themes), never
 redrawn, set as text, stretched, rotated, shadowed or recoloured. Glød is the
 colour around the logo, never in it. Clear space is about half the logo's
 height. Under 10px

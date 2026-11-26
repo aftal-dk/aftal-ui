@@ -181,7 +181,7 @@ export function App() {
           <Block label="h1 - gabarito 600, 72px">
             <p className="h1">Op til tiden. Ned til tiden.</p>
           </Block>
-          <Block label="h2 - gabarito 600, 44px">
+          <Block label="h2 - gabarito 600, 30 til 44px">
             <p className="h2">To afdelinger, ét hold.</p>
           </Block>
           <Block label="h3 - gabarito 600, 28px">
@@ -235,7 +235,7 @@ export function App() {
               </div>
             </div>
           </Block>
-          <Block label="logo - følger temaet, og kan også sættes fast som hvid eller sort">
+          <Block label="logo - følger temaet, er altid hvidt på Glød, og kan også sættes fast som hvid eller sort">
             <div className="g-dark-tile">
               <Logo variant="white" height={38} />
               <Logo variant="icon-white" height={34} />
@@ -246,8 +246,8 @@ export function App() {
               <Logo variant="black" height={38} />
               <Logo variant="icon-black" height={34} />
             </div>
-            <div className="g-brand-tile" style={{ marginTop: 16, justifyContent: 'flex-start' }}>
-              <Logo variant="white" height={38} />
+            <div className="g-brand-tile" data-surface="glod" style={{ marginTop: 16, justifyContent: 'flex-start' }}>
+              <Logo height={38} />
             </div>
           </Block>
         </Section>
@@ -255,8 +255,8 @@ export function App() {
         <Section id="kort" title="Kort." lead="Tint-fyld og hairline, ingen skygger. Hover er ren farve-fade - intet flytter sig.">
           <Block label="deptcard - to afdelinger">
             <div className="g-grid-2">
-              <DeptCard name="Aftal Byggeri" tag="Egne håndværkere, fast byggeledelse" description="Opførelse med egne faggrupper og én ansvarlig byggeleder." />
-              <DeptCard name="Aftal Drift" tag="Vi passer ejendommen efter aflevering" description="Teknisk vedligehold, service og akut udkald." />
+              <DeptCard name="Byggeri" tag="Egne håndværkere, fast byggeledelse" description="Opførelse med egne faggrupper og én ansvarlig byggeleder." />
+              <DeptCard name="Drift" tag="Vi passer ejendommen efter aflevering" description="Teknisk vedligehold, service og akut udkald." />
             </div>
           </Block>
           <Block label="categorycard - 2-up">
@@ -401,7 +401,7 @@ export function App() {
           <Block label="relatedlink">
             <div className="g-row" style={{ gap: 28 }}>
               <RelatedLink>Se vores referencer</RelatedLink>
-              <RelatedLink>Læs om Aftal Drift</RelatedLink>
+              <RelatedLink>Læs om Drift</RelatedLink>
             </div>
           </Block>
           <Block label="trustband - medlemsmærker">

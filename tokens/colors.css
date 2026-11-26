@@ -83,21 +83,6 @@
   --kalk:        var(--hvid);   /* was the off-white ground */
   --kulsort:     var(--sort);   /* was black */
 
-  /* Department colours are gone (0.3.0). The old names resolve to the accent so
-     nothing breaks; departments are shown as text or a neutral badge. Do not use. */
-  --on-dept:        var(--accent-ink);
-  --byggeri:        var(--accent);
-  --byggeri-hover:  var(--accent-hover);
-  --byggeri-text:   var(--accent-text);
-  --byggeri-soft:   var(--accent-soft);
-  --byggeri-line:   var(--accent-line);
-  --drift:          var(--accent);
-  --drift-hover:    var(--accent-hover);
-  --drift-text:     var(--accent-text);
-  --drift-soft:     var(--accent-soft);
-  --drift-line:     var(--accent-line);
-  --violet:         var(--accent);  /* retired colour */
-
   color-scheme: dark;
 }
 
@@ -128,10 +113,34 @@
   --header-bg:          rgba(255, 255, 255, 0.80);
   --header-bg-scrolled: rgba(255, 255, 255, 0.94);
 
-  --status-success: #356c4e;   /* darker than the brand kit's #3e7d5a, which is 4.3:1 as small text on its tint */
+  --status-success: #356c4e;   /* darker than the brand kit's #3e7d5a (4.45:1 on #f4f4f4); this is 5.61:1 */
   --status-error:   #c02b1d;
-  --status-warning: #8f5f0a;   /* darker than the brand kit's #c98a1e, which is 2.9:1 as text on white */
-  --status-info:    #376181;   /* darker than the brand kit's #3f6f8f (4.3:1 as small text on a grey panel) */
+  --status-warning: #8f5f0a;   /* darker than the brand kit's #c98a1e (2.94:1 on white); this is 5.51:1 */
+  --status-info:    #3f6f8f;   /* the brand kit's value: 5.41:1 on white, 4.92:1 on #f4f4f4 */
 
   color-scheme: light;
+}
+
+/* Transitional names. They sit in a rule that matches both themes, so they
+   resolve against the nearest data-theme, also when it is set on an inner element. */
+:root, [data-theme="dark"], [data-theme="light"] {
+  --brand:       var(--accent);
+  --brand-hover: var(--accent-hover);
+  --brand-soft:  var(--accent-soft);
+  --brand-line:  var(--accent-line);
+
+  /* Department colours are gone (0.3.0). The old names resolve to the accent so
+     nothing breaks; departments are shown as text or a neutral badge. Do not use. */
+  --on-dept:        var(--accent-ink);
+  --byggeri:        var(--accent);
+  --byggeri-hover:  var(--accent-hover);
+  --byggeri-text:   var(--accent-text);
+  --byggeri-soft:   var(--accent-soft);
+  --byggeri-line:   var(--accent-line);
+  --drift:          var(--accent);
+  --drift-hover:    var(--accent-hover);
+  --drift-text:     var(--accent-text);
+  --drift-soft:     var(--accent-soft);
+  --drift-line:     var(--accent-line);
+  --violet:         var(--accent);  /* retired colour */
 }

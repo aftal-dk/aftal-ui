@@ -22,7 +22,7 @@ export function Button({ variant = 'primary', size = 'md', href, type = 'button'
   const css = Object.assign({
     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
     height: s.height, padding: s.padding, borderRadius: 'var(--radius-md)',
-    fontFamily: 'inherit', fontSize: s.fontSize, fontWeight: 500, letterSpacing: '-0.005em',
+    fontFamily: 'var(--font-sans)', fontSize: s.fontSize, fontWeight: 500, letterSpacing: '-0.005em',
     border: '1px solid transparent', whiteSpace: 'nowrap', textDecoration: 'none',
     cursor: loading ? 'progress' : disabled ? 'not-allowed' : 'pointer', opacity: disabled && !loading ? 0.5 : 1,
     transition: 'background-color .15s ease, color .15s ease, border-color .15s ease, transform .15s ease',

@@ -13,4 +13,4 @@ One-line: the Aftal' logo - the word (drawn from Gabarito 600) as a single-colou
 - `primary` and `icon` render both the white and the black file inside one element that carries the name (`role="img"`, the images are decorative). The black file is hidden inline, so without `styles.css` only the white one shows; with it, the theme (`data-theme` on `<html>`) swaps them. `className`, `style` and `id` go on that element.
 - Clear space around the logo is about half its height.
 - There is one logo. Departments are never written together with it: the old variants `byggeri`, `udvikling` and `drift` are retired and render the plain logo.
-- The logo is white on dark and on Glød, black on light. Glød is the colour around the logo, never in it.
+- The logo is white on dark and on Glød, black on light. A `Logo` without variant inside `data-surface="glod"` (or `.section--glod`) is white in both themes, so it needs no `variant="white"`. Glød is the colour around the logo, never in it.

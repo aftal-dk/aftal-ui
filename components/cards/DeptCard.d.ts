@@ -5,7 +5,7 @@ import * as React from 'react';
  *
  */
 export interface DeptCardProps {
-  /** "Aftal Byggeri" - the department name including the Aftal prefix. */
+  /** "Byggeri" - the department name on its own, without "Aftal" in front. */
   name: string;
   /** One-line positioning, e.g. "Egne håndværkere, fast byggeledelse". */
   tag: string;
