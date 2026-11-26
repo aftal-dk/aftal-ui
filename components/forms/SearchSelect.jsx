@@ -12,6 +12,11 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
   const val = value !== undefined ? value : internal;
   const wrapRef = React.useRef(null);
   const inputRef = React.useRef(null);
+  const triggerRef = React.useRef(null);
+  const restoreFocus = React.useRef(false);
+  const uid = React.useId();
+  const listId = uid + '-list';
+  const optId = (n) => uid + '-opt-' + n;
   const listRef = React.useRef(null);
   const selected = opts.find((o) => o.value === val) || null;
   const q = query.trim().toLowerCase();
@@ -24,6 +29,10 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
     return () => document.removeEventListener('mousedown', away);
   }, [open]);
   React.useEffect(() => { if (open && inputRef.current) inputRef.current.focus(); }, [open]);
+  // After a pick or Escape the search input unmounts: hand focus back to the closed control.
+  React.useEffect(() => {
+    if (!open && restoreFocus.current) { restoreFocus.current = false; if (triggerRef.current) triggerRef.current.focus(); }
+  }, [open]);
   React.useEffect(() => { setActive(0); }, [q, open]);
   React.useEffect(() => {
     const el = listRef.current && listRef.current.children[active];
@@ -33,12 +42,12 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
     }
   }, [active]);
 
-  const pick = (o) => { if (value === undefined) setInternal(o.value); if (onChange) onChange(o.value, o); setOpen(false); setQuery(''); };
+  const pick = (o) => { if (value === undefined) setInternal(o.value); if (onChange) onChange(o.value, o); restoreFocus.current = true; setOpen(false); setQuery(''); };
   const onKey = (e) => {
     if (e.key === 'ArrowDown') { e.preventDefault(); setActive((a) => Math.min(a + 1, filtered.length - 1)); }
     else if (e.key === 'ArrowUp') { e.preventDefault(); setActive((a) => Math.max(a - 1, 0)); }
     else if (e.key === 'Enter') { e.preventDefault(); if (filtered[active]) pick(filtered[active]); }
-    else if (e.key === 'Escape') { setOpen(false); setQuery(''); }
+    else if (e.key === 'Escape') { e.preventDefault(); restoreFocus.current = true; setOpen(false); setQuery(''); }
   };
   const mark = (text) => {
     if (!q) return text;
@@ -54,16 +63,18 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
   const chev = <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--mute)', flex: 'none', marginLeft: 'auto', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .15s ease' }}><path d="m6 9 6 6 6-6" /></svg>;
 
   return (
-    <div ref={wrapRef} style={Object.assign({ position: 'relative' }, style)}>
+    <div ref={wrapRef} style={Object.assign({ position: 'relative' }, style)}
+      onBlur={(e) => { if (open && !(e.relatedTarget && wrapRef.current && wrapRef.current.contains(e.relatedTarget))) { setOpen(false); setQuery(''); } }}>
       {open ? (
         <div style={box}>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--mute)', flex: 'none' }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4-4" /></svg>
-          <input ref={inputRef} value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={onKey} placeholder={selected ? selected.label : placeholder}
+          <input ref={inputRef} role="combobox" aria-expanded="true" aria-controls={listId} aria-autocomplete="list" aria-label={label || placeholder}
+            aria-activedescendant={filtered[active] ? optId(active) : undefined} value={query} onChange={(e) => setQuery(e.target.value)} onKeyDown={onKey} placeholder={selected ? selected.label : placeholder}
             style={{ flex: 1, minWidth: 0, background: 'none', border: 'none', outline: 'none', font: 'inherit', color: 'var(--ink)', padding: 0 }} />
           {chev}
         </div>
       ) : (
-        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label={label || placeholder} tabIndex={0}
+        <div ref={triggerRef} role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label={label || placeholder} tabIndex={0}
           onClick={() => setOpen(true)}
           onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); } }}
           style={Object.assign({}, box, { color: selected ? 'var(--ink)' : 'var(--mute)' })}>
@@ -74,11 +85,12 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
       )}
       {open ? (
         <div style={{ position: 'absolute', zIndex: 40, top: '100%', left: 0, right: 0, minWidth: 300, marginTop: 6, background: 'var(--panel-hi)', border: '1px solid var(--line-2)', borderRadius: 12, boxShadow: 'var(--shadow-lg)', overflow: 'hidden' }}>
-          <div ref={listRef} style={{ maxHeight, overflowY: 'auto', padding: 6 }}>
-            {filtered.length === 0 ? (
-              <div style={{ padding: '18px 14px', fontSize: 13, color: 'var(--mute)' }}>Ingen match for &ldquo;{query}&rdquo;</div>
-            ) : filtered.map((o, n) => (
-              <div key={o.value} onMouseEnter={() => setActive(n)} onMouseDown={(e) => { e.preventDefault(); pick(o); }}
+          {filtered.length === 0 ? (
+            <div role="status" style={{ padding: '18px 14px', fontSize: 13, color: 'var(--mute)' }}>Ingen match for &ldquo;{query}&rdquo;</div>
+          ) : null}
+          <div ref={listRef} id={listId} role="listbox" tabIndex={-1} aria-label={label || placeholder} style={{ maxHeight, overflowY: 'auto', padding: 6, display: filtered.length ? 'block' : 'none' }}>
+            {filtered.map((o, n) => (
+              <div key={o.value} id={optId(n)} onMouseEnter={() => setActive(n)} onMouseDown={(e) => { e.preventDefault(); pick(o); }}
                 style={{ padding: '9px 12px', borderRadius: 8, cursor: 'pointer', background: n === active ? 'var(--panel-2)' : 'none' }} role="option" aria-selected={o.value === val}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, fontSize: 14, fontWeight: 500 }}>
                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{mark(o.label)}</span>
@@ -88,7 +100,7 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
               </div>
             ))}
           </div>
-          <div style={{ padding: '7px 12px', borderTop: '1px solid var(--line)', fontSize: 11, color: 'var(--mute)', display: 'flex', gap: 12 }}>
+          <div aria-hidden="true" style={{ padding: '7px 12px', borderTop: '1px solid var(--line)', fontSize: 11, color: 'var(--mute)', display: 'flex', gap: 12 }}>
             <span>↑↓ navigér</span><span>↵ vælg</span><span>esc luk</span>
             <span style={{ marginLeft: 'auto' }}>{filtered.length} af {opts.length}</span>
           </div>

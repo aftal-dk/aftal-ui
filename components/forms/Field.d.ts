@@ -12,7 +12,7 @@ export interface FieldProps {
   type?: 'text' | 'tel' | 'email' | 'select' | 'textarea';
   name?: string;
   id?: string;
-  /** Only visible while the field is focused and empty. A real example, never a repeat of the label: "din@mail.dk". */
+  /** Only visible while the field is focused and empty. A real example, never a repeat of the label: "din@eksempel.dk". */
   placeholder?: string;
   /** Options for type="select". */
   options?: string[];

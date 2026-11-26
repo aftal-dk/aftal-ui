@@ -15,7 +15,7 @@ export function WorkRow({ title, description, points = [], image, soon = false, 
       display: 'grid', gridTemplateColumns: '132px 1fr', gap: 28, alignItems: 'center',
       padding: '20px 8px', borderBottom: '1px solid var(--line)',
       background: hover ? 'var(--accent-wash)' : 'transparent',
-      color: 'var(--ink)', textDecoration: 'none', 
+      color: 'var(--ink)', textDecoration: 'none',
       transition: 'background-color .15s ease',
     }, style)}>
       <Media src={image} ratio="4 / 3" radius="var(--radius-lg)" style={{ border: '1px solid var(--line)' }} />

@@ -1,9 +1,9 @@
-One-line: a KPI — big display number over a lowercase label.
+One-line: a KPI - big display number over a lowercase label.
 
 ```jsx
 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, padding: '32px 0', borderTop: '1px solid var(--line)', borderBottom: '1px solid var(--line)' }}>
-  <Stat value="9" label="faste folk" />
-  <Stat value="450+" label="lejemål" />
+  <Stat value="12" label="faste folk" />
+  <Stat value="300+" label="lejemål" />
 </div>
 ```
 

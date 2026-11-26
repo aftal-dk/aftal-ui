@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-/** Aftal's stroke icons: 24x24, stroke-width 2, round caps — the Lucide-style set used across the site. */
+/** Aftal's stroke icons: 24x24, stroke-width 2, round caps - the Lucide-style set used across the site. */
 export interface IconProps {
   /** @default "arrow" */
   name?: 'arrow' | 'check' | 'chevron' | 'menu' | 'close' | 'moon' | 'sun' | 'cookie' | 'image' | 'phone' | 'mail';

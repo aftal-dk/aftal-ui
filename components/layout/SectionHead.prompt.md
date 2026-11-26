@@ -1,4 +1,4 @@
-One-line: the section opener — h2 and one lead line, never a kicker or an eyebrow label.
+One-line: the section opener - h2 and one lead line, never a kicker or an eyebrow label.
 
 ```jsx
 <SectionHead title={<>Tre afdelinger, <em>ét hold.</em></>} lead="Vi følger ejendommen fra første streg til daglig drift." oneline />

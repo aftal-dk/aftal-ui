@@ -101,8 +101,7 @@ a, button, input, select, textarea { touch-action: manipulation; }
 [data-theme="light"] .trust-logo { filter: invert(1) brightness(0.12); }
 
 /* The logo follows the theme: the Logo component renders the white and the
-   black file, and the theme shows one of them. */
-.aftal-logo { display: block; width: auto; }
-.aftal-logo--on-light { display: none; }
-[data-theme="light"] .aftal-logo--on-light { display: block; }
-[data-theme="light"] .aftal-logo--on-dark { display: none; }
+   black file, hides the black one inline, and the light theme swaps them.
+   !important is needed to beat that inline default. */
+[data-theme="light"] .aftal-logo__img--on-light { display: block !important; }
+[data-theme="light"] .aftal-logo__img--on-dark { display: none !important; }

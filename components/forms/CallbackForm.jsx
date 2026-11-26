@@ -37,7 +37,7 @@ export function CallbackForm({ title = 'Vi ringer dig op.', lead, scope = 'Ikke 
           <Field label="Navn" name="name" placeholder="Dit navn" required />
           <Field label="Telefon" name="phone" type="tel" placeholder="12 34 56 78" required />
         </div>
-        <Field label="Email" name="email" type="email" placeholder="din@mail.dk" required />
+        <Field label="Email" name="email" type="email" placeholder="din@eksempel.dk" required />
         <Field label="Hvad drejer det sig om?" name="scope" type="select" defaultValue={scope}
           options={['Byggeri', 'Drift', 'Ikke sikker endnu']} />
         {withMessage ? <Field label="Kort om opgaven" name="message" type="textarea" placeholder="Et par linjer om hvad du har brug for" /> : null}

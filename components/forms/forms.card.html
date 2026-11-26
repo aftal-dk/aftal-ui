@@ -10,14 +10,14 @@
 <body><div id="root"></div>
 <script type="text/babel">
 const { Field, Switch, CallbackForm, SearchSelect } = window.AftalDesignSystem_7a6b2e;
-const ordrer = Array.from({ length: 18 }, (_, i) => { const n = 308 - i; const t = ['Genmonter køkkenskab på væg','Terrassedør binder','Reklamation - lås','Drone-optagelser','Udskiftning af hegn på terrasse','Vaskemaskiner','Gravsted','Have','Renovering af lejlighed','Hoveddør og terrassedøre binder','Udskiftning af dør i skur','Udskiftning af cylinder og vindue','Udskiftning af utæt tag','Fjernelse af varmepumpe','Udskiftning af bordplade i køkken','Løse vandhaner i køkken og bryggers','Maling af opgang','Nyt gulv i entré'][i]; return { value: String(n), label: '#' + n + ' · ' + t, meta: ['Engtoften 12, Viby J','Gl. Hasseris Villapark','Skalborggaard, Aalborg'][i % 3] }; });
+const ordrer = Array.from({ length: 18 }, (_, i) => { const n = 308 - i; const t = ['Genmonter køkkenskab på væg','Terrassedør binder','Reklamation - lås','Drone-optagelser','Udskiftning af hegn på terrasse','Vaskemaskiner','Gravsted','Have','Renovering af lejlighed','Hoveddør og terrassedøre binder','Udskiftning af dør i skur','Udskiftning af cylinder og vindue','Udskiftning af utæt tag','Fjernelse af varmepumpe','Udskiftning af bordplade i køkken','Løse vandhaner i køkken og bryggers','Maling af opgang','Nyt gulv i entré'][i]; return { value: String(n), label: '#' + n + ' · ' + t, meta: ['Eksempelvej 12, Eksempelby','Eksempelparken, Eksempelby','Eksempelgården, Prøveby'][i % 3] }; });
 function Demo() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24, alignItems: 'start' }}>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
         <p className="cap">Field</p>
         <Field label="Navn" name="d-name" placeholder="Dit navn" />
-        <Field label="Email" name="d-email" type="email" placeholder="din@mail.dk" />
+        <Field label="Email" name="d-email" type="email" placeholder="din@eksempel.dk" />
         <Field label="Hvad drejer det sig om?" name="d-scope" type="select" options={['Byggeri','Drift','Ikke sikker endnu']} />
         <Field label="Kort om opgaven" name="d-msg" type="textarea" placeholder="Et par linjer om hvad du har brug for" />
         <p className="cap" style={{ marginTop: 8 }}>SearchSelect</p>

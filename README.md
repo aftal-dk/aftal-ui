@@ -42,6 +42,10 @@ cd gallery && npm install && npm run dev
 
 Galleriet importerer pakken direkte fra repo-roden, så det viser altid den aktuelle source.
 
+## Licenser
+
+Skrifterne i `assets/fonts/` er under SIL Open Font License 1.1: Gabarito ([OFL-Gabarito.txt](assets/fonts/OFL-Gabarito.txt)) og Google Sans Flex ([OFL-GoogleSansFlex.txt](assets/fonts/OFL-GoogleSansFlex.txt)). Licenstekst og ophavsretslinje skal følge med, hvis skrifterne distribueres videre.
+
 ## Regler
 
 - Aldrig hardkodede farver i apps - kun tokens.

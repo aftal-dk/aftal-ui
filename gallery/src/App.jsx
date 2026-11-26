@@ -9,33 +9,55 @@ import {
 
 const img = (n) => `/assets/images/ref-glhasseris-${n}.jpg`;
 
-// Display values for the colour tables (the swatches themselves read the tokens).
+// The colour tables list tokens and read their values from the stylesheet,
+// so they cannot drift from tokens/colors.css.
 const PALETTE = [
-  { name: 'Glød', token: '--glod', hex: '#d44016', note: 'brandfarven og den aktive farve' },
-  { name: 'Sort', token: '--sort', hex: '#111111', note: 'bunden i det mørke tema' },
-  { name: 'Hvid', token: '--hvid', hex: '#ffffff', note: 'tekst på mørk bund og på Glød' },
+  { name: 'Glød', token: '--glod', note: 'brandfarven og den aktive farve' },
+  { name: 'Sort', token: '--sort', note: 'bunden i det mørke tema' },
+  { name: 'Hvid', token: '--hvid', note: 'tekst på mørk bund og på Glød' },
 ];
 
 const ROLES = [
-  { token: '--bg', dark: '#111111', light: '#ffffff', note: 'sidens bund' },
-  { token: '--panel', dark: '#1c1c1c', light: '#f4f4f4', note: 'kort og paneler' },
-  { token: '--panel-2', dark: '#242424', light: '#ebebeb', note: 'inputfelter' },
-  { token: '--panel-hi', dark: '#2c2c2c', light: '#e2e2e2', note: 'hover' },
-  { token: '--ink', dark: '#ffffff', light: '#111111', note: 'overskrifter og primær tekst' },
-  { token: '--ink-soft', dark: '#dcdcdc', light: '#2b2b2b', note: 'brødtekst' },
-  { token: '--mute', dark: '#a6a6a6', light: '#5a5a5a', note: 'billedtekster og metadata' },
-  { token: '--accent-text', dark: '#f26a40', light: '#b8360f', note: 'links og lille tekst i brandfarven' },
-  { token: '--ai', dark: '#a78bfa', light: '#6d28d9', note: 'kun det, en AI har skrevet eller foreslår' },
+  { token: '--bg', note: 'sidens bund' },
+  { token: '--panel', note: 'kort og paneler' },
+  { token: '--panel-2', note: 'inputfelter' },
+  { token: '--panel-hi', note: 'hover' },
+  { token: '--ink', note: 'overskrifter og primær tekst' },
+  { token: '--ink-soft', note: 'brødtekst' },
+  { token: '--mute', note: 'billedtekster og metadata' },
+  { token: '--accent-text', note: 'links og lille tekst i brandfarven' },
+  { token: '--ai', note: 'kun det, en AI har skrevet eller foreslår' },
 ];
+
+/** Reads token values for both themes from probe elements, whatever theme the page is in. */
+function useTokenValues(tokens) {
+  const [values, setValues] = React.useState({ dark: {}, light: {} });
+  React.useEffect(() => {
+    const out = { dark: {}, light: {} };
+    for (const theme of ['dark', 'light']) {
+      const probe = document.createElement('div');
+      probe.setAttribute('data-theme', theme);
+      probe.style.display = 'none';
+      document.body.appendChild(probe);
+      const cs = getComputedStyle(probe);
+      for (const t of tokens) out[theme][t] = cs.getPropertyValue(t).trim();
+      probe.remove();
+    }
+    setValues(out);
+  }, [tokens]);
+  return values;
+}
+
+const TOKEN_NAMES = [...PALETTE, ...ROLES].map((r) => r.token);
 
 const ICON_NAMES = ['arrow', 'check', 'chevron', 'menu', 'close', 'sun', 'moon', 'cookie', 'image', 'phone', 'mail'];
 
 const ORDRER = [
-  'Tagudskiftning, Gl. Hasseris', 'Vinduesudskiftning, Hobro', 'Tagpap, Aars Syd',
-  'Facaderenovering, Aalborg Ø', 'Terrasse, Støvring', 'Kvist, Nibe',
-  'Solceller, Svenstrup', 'Efterisolering, Skørping', 'Døre og vinduer, Terndrup',
-  'Carport, Suldrup', 'Tagrender, Haverslev', 'Undertag, Arden',
-  'Altandøre, Vodskov', 'Gavlbeklædning, Brønderslev',
+  'Tagudskiftning, Eksempelby', 'Vinduesudskiftning, Prøveby', 'Tagpap, Eksempelby Syd',
+  'Facaderenovering, Eksempelby Øst', 'Terrasse, Modelby', 'Kvist, Prøveby',
+  'Solceller, Demostrup', 'Efterisolering, Modelby', 'Døre og vinduer, Testrup',
+  'Carport, Demostrup', 'Tagrender, Testrup', 'Undertag, Prøveby',
+  'Altandøre, Modelby', 'Gavlbeklædning, Testrup',
 ];
 
 const NAV = [
@@ -64,6 +86,7 @@ function Block({ label, children }) {
 }
 
 export function App() {
+  const tokenValues = useTokenValues(TOKEN_NAMES);
   const [theme, setTheme] = React.useState(
     () => document.documentElement.getAttribute('data-theme') || 'dark'
   );
@@ -110,7 +133,7 @@ export function App() {
                   <div className="g-swatch-fill" style={{ background: `var(${c.token})` }} />
                   <div className="g-swatch-meta">
                     <strong>{c.name}</strong>
-                    <code>{c.hex} · {c.note}</code>
+                    <code>{tokenValues.dark[c.token]} · {c.note}</code>
                   </div>
                 </div>
               ))}
@@ -124,8 +147,8 @@ export function App() {
               {ROLES.map((r) => (
                 <div key={r.token} className="g-role" role="row">
                   <code role="cell">{r.token}</code>
-                  <span role="cell" className="g-chip"><i style={{ background: r.dark }} />{r.dark}</span>
-                  <span role="cell" className="g-chip"><i style={{ background: r.light }} />{r.light}</span>
+                  <span role="cell" className="g-chip"><i style={{ background: tokenValues.dark[r.token] }} />{tokenValues.dark[r.token]}</span>
+                  <span role="cell" className="g-chip"><i style={{ background: tokenValues.light[r.token] }} />{tokenValues.light[r.token]}</span>
                   <span role="cell">{r.note}</span>
                 </div>
               ))}
@@ -174,7 +197,7 @@ export function App() {
             </p>
           </Block>
           <Block label="tal og kode - google sans code">
-            <p className="body-sm" style={{ fontFamily: 'var(--font-mono)' }}>Hverdage 8-15:30 · Aars, Nordjylland</p>
+            <p className="body-sm" style={{ fontFamily: 'var(--font-mono)' }}>Hverdage 08:00-15:30 · Eksempelby</p>
           </Block>
         </Section>
 
@@ -246,8 +269,8 @@ export function App() {
           </Block>
           <Block label="refcard - inkl. 'dit projekt her?'-varianten">
             <div className="g-grid-3">
-              <RefCard title="Tagudskiftning i Gl. Hasseris" meta="Byggeri · Aalborg, 2026" image={img(1)} />
-              <RefCard title="Tagudskiftning i Gl. Hasseris" meta="Byggeri · Aalborg, 2026" image={img(2)} />
+              <RefCard title="Tagudskiftning i Eksempelby" meta="Byggeri · Eksempelby, 2026" image={img(1)} />
+              <RefCard title="Tagudskiftning i Eksempelby" meta="Byggeri · Eksempelby, 2026" image={img(2)} />
               <RefCard smiley title="Dit projekt her?" meta="Vi tager gerne en uforpligtende snak." />
             </div>
           </Block>
@@ -260,7 +283,7 @@ export function App() {
           </Block>
           <Block label="media - med billede og ærlig tom-tilstand">
             <div className="g-grid-2">
-              <Media src={img(3)} alt="Tagudskiftning i Gl. Hasseris" ratio="16 / 10" />
+              <Media src={img(3)} alt="Tagudskiftning i Eksempelby" ratio="16 / 10" />
               <Media label="Foto på vej" ratio="16 / 10" />
             </div>
           </Block>
@@ -270,7 +293,7 @@ export function App() {
           <Block label="field - text / email / select / textarea">
             <div className="g-grid-2">
               <Field label="Navn" name="d-name" placeholder="Dit navn" />
-              <Field label="Email" name="d-email" type="email" placeholder="din@mail.dk" />
+              <Field label="Email" name="d-email" type="email" placeholder="din@eksempel.dk" />
               <Field label="Hvad drejer det sig om?" name="d-scope" type="select" options={['Byggeri', 'Drift', 'Ikke sikker endnu']} />
               <Field label="Kort om opgaven" name="d-msg" type="textarea" placeholder="Et par linjer om hvad du har brug for" />
             </div>
@@ -309,7 +332,7 @@ export function App() {
                 <SkeletonList rows={6} />
               </div>
               <div style={{ background: 'var(--tint)', border: '1px solid var(--line)', borderRadius: 18, padding: 20 }}>
-                <p className="body-sm" style={{ marginBottom: 14 }}>Tagudskiftning, Gl. Hasseris</p>
+                <p className="body-sm" style={{ marginBottom: 14 }}>Tagudskiftning, Eksempelby</p>
                 <p className="body">Tømrerne er på pladsen fra mandag. Stillads står klar torsdag.</p>
                 <p className="body-sm" style={{ marginTop: 14 }}>Skeleton bruges kun til det, der mangler - det her kort er kommet.</p>
               </div>
@@ -338,7 +361,7 @@ export function App() {
                 {ORDRER.slice(0, 5).map((o) => (
                   <React.Fragment key={o}>
                     <span className="body">{o}</span>
-                    <span className="body-sm" style={{ fontFamily: 'var(--font-mono)' }}>520 kr/t</span>
+                    <span className="body-sm" style={{ fontFamily: 'var(--font-mono)' }}>12 timer</span>
                   </React.Fragment>
                 ))}
               </div>
@@ -356,12 +379,12 @@ export function App() {
         </Section>
 
         <Section id="layout" title="Layout." lead="Sektionshoveder, nøgletal og de to bånd.">
-          <Block label="stat - de fire rigtige tal">
+          <Block label="stat - nøgletal">
             <div className="g-grid-4">
-              <Stat value="9" label="faste folk" />
+              <Stat value="12" label="faste folk" />
               <Stat value="2" label="afdelinger" />
-              <Stat value="40+" label="ejendomme i drift" />
-              <Stat value="450+" label="lejemål" />
+              <Stat value="30+" label="ejendomme i drift" />
+              <Stat value="300+" label="lejemål" />
             </div>
           </Block>
           <Block label="uspitem - check som eneste bullet">
@@ -377,7 +400,7 @@ export function App() {
               <RelatedLink>Læs om Aftal Drift</RelatedLink>
             </div>
           </Block>
-          <Block label="trustband - mørkt medlemsbånd">
+          <Block label="trustband - medlemsmærker">
             <TrustBand text="Vi er medlem af Byg Garanti og DI Byggeri." />
           </Block>
           <Block label="ctaband - sidens eneste breaker, altid fuldbredde">

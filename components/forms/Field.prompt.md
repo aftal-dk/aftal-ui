@@ -2,7 +2,7 @@ One-line: the form field - floating label inside the field, --panel-2 fill, Glø
 
 ```jsx
 <Field label="Navn" name="name" placeholder="Dit navn" required />
-<Field label="Telefon" name="phone" type="tel" placeholder="23 97 99 46" required />
+<Field label="Telefon" name="phone" type="tel" placeholder="12 34 56 78" required />
 <Field label="Hvad drejer det sig om?" name="scope" type="select" options={['Byggeri', 'Drift', 'Ikke sikker endnu']} />
 ```
 

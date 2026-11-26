@@ -19,7 +19,7 @@ export function Switch({ checked, defaultChecked, onChange, locked = false, labe
         display: 'block', width: 44, height: 26, borderRadius: 'var(--radius-pill)', position: 'relative',
         background: on ? 'var(--accent)' : 'var(--panel-hi)',
         border: '1px solid ' + (on ? 'var(--accent)' : 'var(--line-2)'),
-        outline: focusRing ? '2px solid var(--accent)' : 'none', outlineOffset: 2,
+        outline: focusRing ? '2px solid var(--focus, var(--accent))' : 'none', outlineOffset: 2,
         transition: 'background-color .18s ease, border-color .18s ease',
       }}>
         <span style={{
