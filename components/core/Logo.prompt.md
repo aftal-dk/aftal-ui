@@ -1,13 +1,14 @@
-One-line: the Aftal lockup — primary, single-colour, icon-only and department variants.
+One-line: the Aftal' logo - the word as a single-colour SVG, the icon, and the app icon.
 
 ```jsx
-<Logo height={39} />                       // header, light ground
-<Logo variant="white" height={34} />       // on photography or the dark theme
-<Logo variant="byggeri" height={30} />     // department-specific material
-<Logo variant="icon" height={28} />        // favicon, avatar, tight spaces
+<Logo height={28} />                       // follows the theme: white in dark, black in light
+<Logo variant="white" height={34} />       // fixed white, on photography or a dark flat
+<Logo variant="icon" height={28} />        // tight spaces, under 10 px height use the icon
+<Logo variant="app" height={48} />         // app icon on a dark tile
 ```
 
 - Set `window.AFTAL_ASSET_BASE` to wherever `/assets` was copied (defaults to `assets`).
-- The lockup is never redrawn, recoloured outside the palette, rotated, or split apart. Department names never appear without the wordmark.
-- Clear space around the lockup is at least the height of the mark's circle.
-- Assets are PNG (extracted from the 2026 brand guide PDF) — ask the agency for the vector originals before print work.
+- The logo is always one colour and always the file: never redrawn, set as text, stretched, rotated, shadowed or recoloured. The apostrophe is part of the logo.
+- `primary` and `icon` render both the white and the black file and let the theme (`data-theme` on `<html>`, via `styles.css`) show the right one.
+- Clear space around the logo is about half its height.
+- The department variants (`byggeri`, `udvikling`, `drift`) are retired and render the plain logo.

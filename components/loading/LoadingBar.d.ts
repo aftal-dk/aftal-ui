@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 /**
- * A 2px GLØD bar along the top edge of a panel that is refreshing behind
+ * A 2px Glød bar along the top edge of a panel that is refreshing behind
  * content that is already on screen. Content is never covered by a spinner.
  */
 export interface LoadingBarProps extends React.HTMLAttributes<HTMLSpanElement> {

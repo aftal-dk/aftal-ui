@@ -1,11 +1,11 @@
 import * as React from 'react';
 
 /**
- * Department card — the three-up band that routes people to Udvikling, Byggeri or Drift.
+ * Department card - the band that routes people to Byggeri or Drift.
  *
  */
 export interface DeptCardProps {
-  /** "Aftal Byggeri" — the department name including the Aftal prefix. */
+  /** "Aftal Byggeri" - the department name including the Aftal prefix. */
   name: string;
   /** One-line positioning, e.g. "Egne håndværkere, fast byggeledelse". */
   tag: string;

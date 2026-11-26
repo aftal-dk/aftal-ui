@@ -1,4 +1,4 @@
-One-line: the "Kommer snart" pill — tinted GLØD capsule for services that are not live yet.
+One-line: the "Kommer snart" pill - tinted Glød capsule for services that are not live yet.
 
 ```jsx
 <span className="wt-row-title">Droner <Badge /></span>

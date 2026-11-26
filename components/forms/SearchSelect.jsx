@@ -44,11 +44,11 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
     if (!q) return text;
     const i = text.toLowerCase().indexOf(q);
     if (i < 0) return text;
-    return [text.slice(0, i), <mark key="m" style={{ background: 'none', color: 'var(--brand)', fontWeight: 600 }}>{text.slice(i, i + q.length)}</mark>, text.slice(i + q.length)];
+    return [text.slice(0, i), <mark key="m" style={{ background: 'none', color: 'var(--accent-text)', fontWeight: 600 }}>{text.slice(i, i + q.length)}</mark>, text.slice(i + q.length)];
   };
   const box = {
     height, display: 'flex', alignItems: 'center', gap: 9, padding: '0 13px', width: '100%',
-    background: open ? 'var(--panel-hi)' : 'var(--panel-2)', border: '1px solid ' + (open ? 'var(--brand)' : 'var(--line)'),
+    background: open ? 'var(--panel-hi)' : 'var(--panel-2)', border: '1px solid ' + (open ? 'var(--accent)' : 'var(--line-2)'), boxShadow: open ? '0 0 0 1px var(--accent)' : 'none',
     borderRadius: 10, fontSize: 14, cursor: 'pointer', transition: 'border-color .15s ease, background-color .15s ease',
   };
   const chev = <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--mute)', flex: 'none', marginLeft: 'auto', transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .15s ease' }}><path d="m6 9 6 6 6-6" /></svg>;
@@ -63,23 +63,26 @@ export function SearchSelect({ label, options = [], value, defaultValue, onChang
           {chev}
         </div>
       ) : (
-        <div onClick={() => setOpen(true)} style={Object.assign({}, box, { color: selected ? 'var(--ink)' : 'var(--mute)' })}>
+        <div role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label={label || placeholder} tabIndex={0}
+          onClick={() => setOpen(true)}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown') { e.preventDefault(); setOpen(true); } }}
+          style={Object.assign({}, box, { color: selected ? 'var(--ink)' : 'var(--mute)' })}>
           {label ? <span style={{ fontSize: 11, fontWeight: 500, color: 'var(--ink-soft)', flex: 'none' }}>{label}</span> : null}
           <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{selected ? selected.label : placeholder}</span>
           {chev}
         </div>
       )}
       {open ? (
-        <div style={{ position: 'absolute', zIndex: 40, top: '100%', left: 0, right: 0, minWidth: 300, marginTop: 6, background: 'var(--panel-hi)', border: '1px solid var(--line-2)', borderRadius: 12, boxShadow: '0 16px 40px rgba(0,0,0,0.28)', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', zIndex: 40, top: '100%', left: 0, right: 0, minWidth: 300, marginTop: 6, background: 'var(--panel-hi)', border: '1px solid var(--line-2)', borderRadius: 12, boxShadow: 'var(--shadow-lg)', overflow: 'hidden' }}>
           <div ref={listRef} style={{ maxHeight, overflowY: 'auto', padding: 6 }}>
             {filtered.length === 0 ? (
               <div style={{ padding: '18px 14px', fontSize: 13, color: 'var(--mute)' }}>Ingen match for &ldquo;{query}&rdquo;</div>
             ) : filtered.map((o, n) => (
               <div key={o.value} onMouseEnter={() => setActive(n)} onMouseDown={(e) => { e.preventDefault(); pick(o); }}
-                style={{ padding: '9px 12px', borderRadius: 8, cursor: 'pointer', background: n === active ? 'var(--panel-2)' : 'none' }}>
+                style={{ padding: '9px 12px', borderRadius: 8, cursor: 'pointer', background: n === active ? 'var(--panel-2)' : 'none' }} role="option" aria-selected={o.value === val}>
                 <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, fontSize: 14, fontWeight: 500 }}>
                   <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{mark(o.label)}</span>
-                  {o.value === val ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--brand)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flex: 'none', marginLeft: 'auto' }}><path d="M20 6 9 17l-5-5" /></svg> : null}
+                  {o.value === val ? <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent-text)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ flex: 'none', marginLeft: 'auto' }}><path d="M20 6 9 17l-5-5" /></svg> : null}
                 </div>
                 {o.meta ? <div style={{ fontSize: 12, color: 'var(--mute)', marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{mark(o.meta)}</div> : null}
               </div>

@@ -17,7 +17,7 @@ const CSS = `
 @keyframes aftal-bar{0%,100%{opacity:.35}50%{opacity:1}}
 .aftal-loading{animation:aftal-appear 1ms linear var(--aftal-loading-delay,200ms) both}
 .aftal-spinner__ring{animation:aftal-spin .8s linear infinite;transform-origin:center}
-.aftal-skeleton{background:rgba(127,127,127,.16);background:color-mix(in srgb,currentColor 9%,transparent)}
+.aftal-skeleton{background:color-mix(in srgb,currentColor 9%,transparent)}
 .aftal-loading-bar{animation:aftal-appear 1ms linear var(--aftal-loading-delay,200ms) both,aftal-bar 1.2s ease-in-out infinite}
 @media (prefers-reduced-motion:reduce){
   .aftal-spinner__ring{animation:none}

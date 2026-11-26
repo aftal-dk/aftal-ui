@@ -1,4 +1,4 @@
-One-line: a 2px GLØD bar at the top of a panel that is refreshing behind content the user can already see.
+One-line: a 2px Glød bar at the top of a panel that is refreshing behind content the user can already see.
 
 ```jsx
 <section style={{ position: 'relative' }}>

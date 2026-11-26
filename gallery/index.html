@@ -4,14 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex, nofollow" />
-    <link rel="icon" type="image/png" href="/assets/logo/aftal-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon/favicon.svg" />
+    <link rel="apple-touch-icon" href="/assets/favicon/apple-touch-icon.png" />
     <title>Aftal UI</title>
     <script>
-      // Theme before first paint - avoids a flash when dark is stored.
-      document.documentElement.setAttribute(
-        'data-theme',
-        localStorage.getItem('aftal-theme') || 'light'
-      );
+      // Theme before first paint (dark is the default) - avoids a flash when light is stored.
+      var theme = 'dark';
+      try { theme = localStorage.getItem('aftal-ui-theme') || 'dark'; } catch (e) { /* storage unavailable */ }
+      document.documentElement.setAttribute('data-theme', theme === 'light' ? 'light' : 'dark');
       window.AFTAL_ASSET_BASE = '/assets';
     </script>
   </head>

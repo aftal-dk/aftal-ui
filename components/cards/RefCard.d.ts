@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-/** Reference card for a finished project. The invitation variant replaces the photo with a GLØD ":-)". */
+/** Reference card for a finished project. The invitation variant replaces the photo with a Glød ":-)". */
 export interface RefCardProps {
   title: string;
   /** "Byggeri · Aalborg, 2026" */

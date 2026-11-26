@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-/** A KPI figure with its label. Numbers are ink; word-values are GLØD and smaller. */
+/** A KPI figure with its label. Numbers are ink; word-values are `--accent-text` and smaller. */
 export interface StatProps {
-  /** "9", "40+", "450+" — or a word like "Landsdækkende". */
+  /** "9", "40+", "450+" - or a word like "Landsdækkende". */
   value: string;
   /** Lowercase noun: "faste folk", "ejendomme i drift". */
   label: string;

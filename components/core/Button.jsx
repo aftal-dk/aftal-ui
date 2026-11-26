@@ -4,9 +4,9 @@ import { Spinner } from '../loading/Spinner.jsx';
 const SIZES = { md: { height: 48, padding: '0 22px', fontSize: 15 }, lg: { height: 54, padding: '0 26px', fontSize: 16 } };
 
 const VARIANTS = {
-  primary: { rest: { background: 'var(--brand)', color: '#fff', borderColor: 'transparent' }, hover: { background: 'var(--brand-hover)' } },
-  ghost:   { rest: { background: 'transparent', color: 'var(--ink)', borderColor: 'var(--line-2)' }, hover: { background: 'var(--panel)' } },
-  onbrand: { rest: { background: '#fff', color: 'var(--glod)', borderColor: 'transparent' }, hover: { background: 'var(--kalk)', color: 'var(--brand-hover)' } },
+  primary: { rest: { background: 'var(--accent)', color: 'var(--accent-ink)', borderColor: 'transparent' }, hover: { background: 'var(--accent-hover)' } },
+  ghost:   { rest: { background: 'transparent', color: 'var(--ink)', borderColor: 'var(--line-2)' }, hover: { background: 'var(--panel-hi)' } },
+  onbrand: { rest: { background: 'var(--onbrand)', color: 'var(--accent-hover)', borderColor: 'transparent' }, hover: { background: 'var(--onbrand-hover)' } },
 };
 
 /** Primary action. One primary button per view; ghost for the secondary path.

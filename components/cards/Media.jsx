@@ -10,7 +10,7 @@ export function Media({ src, alt = '', ratio = '4 / 3', radius = 'var(--radius-l
   if (!src) {
     return (
       <span style={Object.assign({}, frame, { display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--mute-2)' })}>
-        {label ? <span style={{ fontSize: 12, letterSpacing: '0.04em' }}>{label}</span> : <Icon name="image" size={24} />}
+        {label ? <span style={{ fontSize: 13 }}>{label}</span> : <Icon name="image" size={24} />}
       </span>
     );
   }
