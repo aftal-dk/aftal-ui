@@ -31,11 +31,11 @@ export function Icon({ name = 'arrow', size = 16, strokeWidth, style, ...rest })
   );
 }
 
-/** The terracotta map marker — a filled shape, so it lives outside the stroke set. */
+/** The map marker in the brand colour - a filled shape, so it lives outside the stroke set. */
 export function PinIcon({ width = 32, height = 42, style }) {
   return (
     <svg width={width} height={height} viewBox="0 0 24 32" fill="none" style={style} aria-hidden="true">
-      <path fill="var(--brand)" fillRule="evenodd"
+      <path fill="var(--accent)" fillRule="evenodd"
         d="M12 0C5.37 0 0 5.37 0 12c0 8.5 12 20 12 20s12-11.5 12-20C24 5.37 18.63 0 12 0zM12 7.6a4.4 4.4 0 1 0 0 8.8 4.4 4.4 0 1 0 0-8.8z" />
     </svg>
   );

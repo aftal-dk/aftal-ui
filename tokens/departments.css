@@ -1,0 +1,58 @@
+/* ============================================================================
+   Department switch.
+   Components read only --accent, --accent-ink, --accent-hover, --accent-text,
+   --accent-soft and --accent-line. Without data-dept they are Glød, Aftal's
+   brand colour. data-dept on an enclosing element points them at a
+   department's colours.
+
+   Byggeri is Glød, so it looks like the rest of Aftal. The Drift colour is
+   not final: the tokens exist so the switch is in place, but nothing in this
+   library or its gallery uses them, and data-dept="drift" must not be set in
+   new work before the colour is decided.
+   ============================================================================ */
+
+:root, [data-theme="dark"] {
+  --violet: #7a4dff;
+  --on-dept: #ffffff;
+  --byggeri: var(--glod);
+  --byggeri-hover: #b8360f;
+  --byggeri-text: #f26a40;
+  --byggeri-soft: rgba(212, 64, 22, 0.16);
+  --byggeri-line: rgba(212, 64, 22, 0.32);
+  --drift: var(--violet);
+  --drift-hover: #5c24ff;
+  --drift-text: #a184ff;
+  --drift-soft: rgba(122, 77, 255, 0.16);
+  --drift-line: rgba(122, 77, 255, 0.32);
+}
+[data-theme="light"] {
+  --byggeri-text: #b8360f;
+  --byggeri-soft: rgba(212, 64, 22, 0.10);
+  --drift-text: #6b3df2;
+  --drift-soft: rgba(122, 77, 255, 0.10);
+}
+
+[data-dept="byggeri"] {
+  --accent: var(--byggeri);
+  --accent-ink: var(--on-dept);
+  --accent-hover: var(--byggeri-hover);
+  --accent-text: var(--byggeri-text);
+  --accent-soft: var(--byggeri-soft);
+  --accent-line: var(--byggeri-line);
+  --brand: var(--byggeri);
+  --brand-hover: var(--byggeri-hover);
+  --brand-soft: var(--byggeri-soft);
+  --brand-line: var(--byggeri-line);
+}
+[data-dept="drift"] {
+  --accent: var(--drift);
+  --accent-ink: var(--on-dept);
+  --accent-hover: var(--drift-hover);
+  --accent-text: var(--drift-text);
+  --accent-soft: var(--drift-soft);
+  --accent-line: var(--drift-line);
+  --brand: var(--drift);
+  --brand-hover: var(--drift-hover);
+  --brand-soft: var(--drift-soft);
+  --brand-line: var(--drift-line);
+}

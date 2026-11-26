@@ -1,8 +1,8 @@
-One-line: select til lange lister — luk: almindeligt felt; åben: søgeinput med live-filtrering, match i GLØD, piletaster + Enter.
+One-line: select til lange lister - luk: almindeligt felt; åben: søgeinput med live-filtrering, match i Glød, piletaster + Enter.
 
 ```jsx
 <SearchSelect label="Ordre" placeholder="Alle ordrer" options={[
-  { value: '308', label: '#308 · Genmonter køkkenskab på væg', meta: 'Engtoften 12 · Afventer' },
+  { value: '101', label: '#101 · Eksempelordre: maling af trappeopgang', meta: 'Eksempelvej 12 · Afventer' },
 ]} onChange={(v) => setOrdre(v)} />
 ```
 

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-/** Tinted GLØD capsule. The system uses it for one thing: marking a service as not live yet. */
+/** Tinted Glød capsule. The system uses it for one thing: marking a service as not live yet. */
 export interface BadgeProps {
   /** @default "Kommer snart" */
   children?: React.ReactNode;

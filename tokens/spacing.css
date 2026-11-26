@@ -28,7 +28,7 @@
   --section-y-slim: clamp(40px, 5vw, 64px); /* @kind spacing */
   --grid-gap:     20px;
 
-  /* Radii — 18px is the house card radius; pills for chips and the dock. */
+  /* Radii - 18px is the house card radius; pills for chips and the dock. */
   --radius-sm:   8px;    /* inputs */
   --radius-md:   10px;   /* buttons */
   --radius-lg:   12px;   /* thumbnails */

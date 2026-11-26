@@ -1,16 +1,16 @@
 /* ============================================================================
-   Typography. Google Sans Flex carries display and body alike; Strait is the
-   condensed secondary face for a single headline or pull quote; Google Sans
-   Code is the mono companion (fine print, dates, the ":-)" card).
+   Typography. Gabarito (800 and 700) is for headings and key figures, Google
+   Sans Flex for body text and UI, Google Sans Code for numbers and code.
+   Gabarito is never used for long text or dense tables.
    ============================================================================ */
 
 :root {
   --font-sans:    "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
-  --font-display: "Google Sans Flex", "Google Sans", system-ui, -apple-system, sans-serif;
-  --font-accent:  "Strait", "Google Sans Flex", system-ui, sans-serif;  /* condensed, one headline at a time */
+  --font-display: "Gabarito", "Google Sans Flex", system-ui, sans-serif;
+  --font-accent:  var(--font-display);  /* retired (was Strait); points at the heading face */
   --font-mono:    "Google Sans Code", ui-monospace, monospace;
 
-  /* Marketing display scale — fluid, set on the real site with clamp(). */
+  /* Marketing display scale - fluid, set on the real site with clamp(). */
   --text-hero:      clamp(41px, 5.4vw, 69px);   /* front-page h1 */
   --text-page-hero: clamp(42px, 4.6vw, 58px);   /* subpage h1 */
   --text-case:      clamp(40px, 5.4vw, 76px);   /* case title */
@@ -28,23 +28,25 @@
   --text-2xs:     12px;
   --text-3xs:     10px;   /* "Kommer snart" badge */
 
-  /* Line heights — display is tight, body is airy. */
+  /* Line heights - display is tight, body is airy. */
   --leading-hero:   1.04; /* @kind font */
   --leading-tight:  1.1; /* @kind font */
   --leading-snug:   1.25; /* @kind font */
   --leading-body:   1.6; /* @kind font */
   --leading-loose:  1.65; /* @kind font */
 
-  /* Tracking — negative on display, never wide/uppercase on marketing type. */
-  --tracking-hero: -0.03em; /* @kind font */
-  --tracking-h1:   -0.028em; /* @kind font */
-  --tracking-h2:   -0.024em; /* @kind font */
-  --tracking-h3:   -0.018em; /* @kind font */
+  /* Tracking - -0.02em on display, never wide or spaced-out type. */
+  --tracking-hero: -0.02em; /* @kind font */
+  --tracking-h1:   -0.02em; /* @kind font */
+  --tracking-h2:   -0.02em; /* @kind font */
+  --tracking-h3:   -0.02em; /* @kind font */
   --tracking-h4:   -0.012em; /* @kind font */
   --tracking-flat: 0; /* @kind font */
 
-  /* Weights. 500 is the display weight — Aftal never sets headings at 700+. */
+  /* Weights. Headings are Gabarito 800 (hero, h1, h2, stat) and 700 (h3, h4). */
   --weight-regular: 400;
   --weight-medium:  500;
   --weight-semi:    600;
+  --weight-display-heavy: 800; /* @kind font */
+  --weight-display:       700; /* @kind font */
 }

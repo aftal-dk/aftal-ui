@@ -1,4 +1,4 @@
-One-line: the process step card — three across, describing how a job runs.
+One-line: the process step card - three across, describing how a job runs.
 
 ```jsx
 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>

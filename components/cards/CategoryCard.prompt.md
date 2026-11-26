@@ -1,4 +1,4 @@
-One-line: the category card — the two main choices on a department page (e.g. Tagdækning and Tømrer under Byggeri).
+One-line: the category card - the two main choices on a department page (e.g. Tagdækning and Tømrer under Byggeri).
 
 ```jsx
 <CategoryCard title="Tagdækning" description="Tætte, holdbare tage i alle materialer."

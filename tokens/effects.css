@@ -1,18 +1,18 @@
 /* ============================================================================
    Motion, elevation and photo treatment.
-   Aftal is a flat system: elevation is a hairline border plus a 2% tint, not a
-   shadow. The shadow tokens exist for the rare white-surface float.
+   Aftal is a flat system: elevation is a hairline border plus a 3% tint, not a
+   shadow. The shadow tokens exist for the rare floating surface (dropdowns).
    ============================================================================ */
 
 :root {
-  /* Motion — short, linear-feeling eases. No bounce, no spring. */
+  /* Motion - short, linear-feeling eases. No bounce, no spring. */
   --ease-out:  cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
   --dur-fast:  0.12s; /* @kind other */
   --dur-base:  0.15s; /* @kind other */
   --dur-slow:  0.2s; /* @kind other */
   --dur-theme: 0.3s; /* @kind other */   /* theme cross-fade on body */
 
-  /* Hover is colour-fade only - elements never move, grow or slide (Simon, 21.08.2026).
+  /* Hover is a colour fade only - elements never move, grow or slide.
      --lift is kept as a no-op so older references resolve to no movement. */
   --lift: none; /* @kind other */
 
@@ -22,33 +22,29 @@
   --shadow-md:   0 8px 24px rgba(0, 0, 0, 0.08);
   --shadow-lg:   0 20px 50px rgba(0, 0, 0, 0.10);
 
-  /* Blur — only the sticky header and the cookie overlay use it. */
+  /* Blur - only the sticky header and the cookie overlay use it. */
   --blur-header:  blur(14px); /* @kind other */
   --blur-overlay: blur(3px); /* @kind other */
 
-  /* Photo treatment. Photography is warm and real: people, sites, materials.
-     Backgrounds carrying text get a KALK scrim; showcase photos stay natural. */
-  --photo-filter: grayscale(0.20) contrast(1.02) brightness(1.04); /* @kind other */
+  /* Photo treatment. Photography is real: people, sites, materials. Content
+     photos keep their natural colour; a photo with text on top gets a dark
+     scrim in the dark theme and a light one in the light theme. */
+  --photo-filter: contrast(1.02) brightness(0.9); /* @kind other */
   --photo-overlay:
-    linear-gradient(180deg, rgba(237, 235, 232, 0.58) 0%, rgba(237, 235, 232, 0.88) 100%),
-    radial-gradient(120% 120% at 12% 0%, rgba(212, 64, 22, 0.10), transparent 60%); /* @kind other */
+    linear-gradient(180deg, rgba(17, 17, 17, 0.48) 0%, rgba(17, 17, 17, 0.84) 100%); /* @kind other */
   --photo-filter-content: none; /* @kind other */
-  --photo-overlay-content: linear-gradient(180deg, transparent 68%, rgba(41, 40, 38, 0.22)); /* @kind other */
-  --hero-photo-filter: grayscale(0.15) contrast(1.02) brightness(1.02); /* @kind other */
+  --photo-overlay-content: linear-gradient(180deg, transparent 60%, rgba(10, 10, 10, 0.42)); /* @kind other */
+  --hero-photo-filter: contrast(1.04) brightness(0.74); /* @kind other */
   --hero-photo-overlay:
-    linear-gradient(180deg, rgba(237, 235, 232, 0.62) 0%, rgba(237, 235, 232, 0.80) 50%, rgba(237, 235, 232, 0.94) 100%),
-    radial-gradient(80% 70% at 88% 4%, rgba(212, 64, 22, 0.12), transparent 58%); /* @kind other */
+    linear-gradient(180deg, rgba(10, 10, 10, 0.50) 0%, rgba(10, 10, 10, 0.86) 100%); /* @kind other */
 }
 
-[data-theme="dark"] {
-  --photo-filter: grayscale(0.30) contrast(1.04) brightness(0.86); /* @kind other */
+[data-theme="light"] {
+  --photo-filter: contrast(1.02) brightness(1.02); /* @kind other */
   --photo-overlay:
-    linear-gradient(180deg, rgba(41, 40, 38, 0.48) 0%, rgba(41, 40, 38, 0.82) 100%),
-    radial-gradient(120% 120% at 12% 0%, rgba(212, 64, 22, 0.14), transparent 60%); /* @kind other */
-  --photo-filter-content: contrast(1.02) brightness(0.94); /* @kind other */
-  --photo-overlay-content: linear-gradient(180deg, transparent 60%, rgba(20, 19, 18, 0.42)); /* @kind other */
-  --hero-photo-filter: grayscale(0.35) contrast(1.05) brightness(0.72); /* @kind other */
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58) 0%, rgba(255, 255, 255, 0.88) 100%); /* @kind other */
+  --photo-overlay-content: linear-gradient(180deg, transparent 68%, rgba(17, 17, 17, 0.22)); /* @kind other */
+  --hero-photo-filter: contrast(1.02) brightness(1.02); /* @kind other */
   --hero-photo-overlay:
-    linear-gradient(180deg, rgba(33, 31, 30, 0.50) 0%, rgba(33, 31, 30, 0.86) 100%),
-    radial-gradient(80% 70% at 88% 4%, rgba(212, 64, 22, 0.18), transparent 58%); /* @kind other */
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0.80) 50%, rgba(255, 255, 255, 0.94) 100%); /* @kind other */
 }

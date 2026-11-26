@@ -1,4 +1,4 @@
-One-line: the service row — Aftal's list format for many services, denser and quieter than cards.
+One-line: the service row - Aftal's list format for many services, denser and quieter than cards.
 
 ```jsx
 <div style={{ borderTop: '1px solid var(--line)' }}>
@@ -9,4 +9,4 @@ One-line: the service row — Aftal's list format for many services, denser and 
 ```
 
 - The list owns the top hairline; each row draws its own bottom hairline.
-- Hover tints the row GLØD 5%. Colour fade only - the row stays put.
+- Hover tints the row with `--accent-wash`. Colour fade only - the row stays put.

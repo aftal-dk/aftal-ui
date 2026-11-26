@@ -1,4 +1,4 @@
-One-line: the membership marks — Byg Garanti and DI Byggeri, as proof rather than decoration.
+One-line: the membership marks - Byg Garanti and DI Byggeri, as proof rather than decoration.
 
 ```jsx
 <TrustBand text="Vi er medlem af Byg Garanti og DI Byggeri. Det er din tryghed for, at arbejdet er dækket." />

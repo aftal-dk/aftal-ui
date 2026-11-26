@@ -2,7 +2,7 @@ import * as React from 'react';
 
 /** The standard section opener: h2 plus a single lead paragraph, capped at 720px. */
 export interface SectionHeadProps {
-  /** Sentence case, ends with a full stop: "Tre afdelinger, ét hold." */
+  /** Sentence case, ends with a full stop: "To afdelinger, ét hold." */
   title: React.ReactNode;
   lead?: React.ReactNode;
   /** @default 720 */

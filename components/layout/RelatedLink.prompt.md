@@ -1,4 +1,4 @@
-One-line: the pill link — quiet navigation between neighbouring services.
+One-line: the pill link - quiet navigation between neighbouring services.
 
 ```jsx
 <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
@@ -7,4 +7,4 @@ One-line: the pill link — quiet navigation between neighbouring services.
 </div>
 ```
 
-- Outline only — a filled pill would compete with the primary button.
+- Outline only - a filled pill would compete with the primary button.

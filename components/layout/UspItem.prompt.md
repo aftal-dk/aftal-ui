@@ -1,4 +1,4 @@
-One-line: the checked promise line — Aftal's only bullet.
+One-line: the checked promise line - Aftal's only bullet.
 
 ```jsx
 <ul style={{ display: 'grid', gap: 22, padding: 0, margin: 0 }}>

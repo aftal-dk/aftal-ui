@@ -1,8 +1,8 @@
 import * as React from 'react';
 
 /**
- * Aftal's only button. Primary is GLØD orange on any ground, ghost is a
- * hairline outline, onbrand is the white button used inside a GLØD band.
+ * Aftal's only button. Primary is Glød orange on any ground, ghost is a
+ * hairline outline, onbrand is the white button used inside a Glød band.
  *
  */
 export interface ButtonProps {

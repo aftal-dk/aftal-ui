@@ -6,7 +6,7 @@ const CIRCUMFERENCE = 56.55;
 
 /**
  * The system's only spinner. Inherits `currentColor`, so it is white on a
- * GLØD button and muted on a muted line. Appears after `delay` ms.
+ * Glød button and muted on a muted line. Appears after `delay` ms.
  */
 export function Spinner({ size = 16, label = 'Henter…', showLabel = false, delay = 200, style, ...rest }) {
   const hasLabel = !!label;
