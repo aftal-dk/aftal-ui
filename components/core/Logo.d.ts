@@ -20,6 +20,9 @@ export interface LogoProps {
   /** Override the asset URL (when /assets sits somewhere unusual). */
   src?: string;
   alt?: string;
+  /** Size keys (height, width, min/max) apply to the image; the rest to the outer element. */
   style?: React.CSSProperties;
+  className?: string;
+  id?: string;
 }
 export declare function Logo(props: LogoProps): React.JSX.Element;

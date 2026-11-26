@@ -7,7 +7,7 @@ import * as React from 'react';
  */
 export interface SearchSelectOption {
   value: string;
-  /** Row title, e.g. "#308 · Genmonter køkkenskab på væg". */
+  /** Row title, e.g. "#101 · Eksempelordre: maling af trappeopgang". */
   label: string;
   /** Optional second line: ejendom, kunde, status. */
   meta?: string;

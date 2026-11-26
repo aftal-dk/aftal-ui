@@ -24,14 +24,19 @@ const AUTO = { primary: ['white', 'black'], icon: ['icon-white', 'icon-black'] }
  *  brand has no department lockup files, so they render the plain logo. */
 export function Logo({ variant = 'primary', height = 40, src, alt = 'Aftal', className, style, ...rest }) {
   const h = typeof height === 'string' && /^\d+$/.test(height) ? Number(height) : height; // x-import attrs arrive as strings
-  const imgCss = { height: h, width: 'auto', display: 'block' };
+  // Size keys in `style` belong to the image(s), as they did when the logo was a single <img>;
+  // everything else (margin, position ...) goes on the outer element.
+  const SIZE_KEYS = ['height', 'width', 'minHeight', 'maxHeight', 'minWidth', 'maxWidth'];
+  const size = {}; const outer = {};
+  Object.keys(style || {}).forEach((k) => { (SIZE_KEYS.includes(k) ? size : outer)[k] = style[k]; });
+  const imgCss = Object.assign({ height: h, width: 'auto', display: 'block' }, size);
   const cls = (extra) => ['aftal-logo', extra, className].filter(Boolean).join(' ');
-  if (src) return <img src={src} alt={alt} className={cls()} style={Object.assign(imgCss, style)} {...rest} />;
+  if (src) return <img src={src} alt={alt} className={cls()} style={Object.assign({}, imgCss, outer)} {...rest} />;
   const v = FILE[variant] || AUTO[variant] ? variant : 'primary';
-  if (FILE[v]) return <img src={base() + FILE[v]} alt={alt} className={cls()} style={Object.assign(imgCss, style)} {...rest} />;
+  if (FILE[v]) return <img src={base() + FILE[v]} alt={alt} className={cls()} style={Object.assign({}, imgCss, outer)} {...rest} />;
   const [onDark, onLight] = AUTO[v];
   return (
-    <span role="img" aria-label={alt} className={cls()} style={Object.assign({ display: 'block', width: 'fit-content', lineHeight: 0 }, style)} {...rest}>
+    <span role="img" aria-label={alt} className={cls()} style={Object.assign({ display: 'block', width: 'fit-content', lineHeight: 0 }, outer)} {...rest}>
       <img src={base() + FILE[onDark]} alt="" aria-hidden="true" className="aftal-logo__img aftal-logo__img--on-dark" style={imgCss} />
       <img src={base() + FILE[onLight]} alt="" aria-hidden="true" className="aftal-logo__img aftal-logo__img--on-light" style={Object.assign({}, imgCss, { display: 'none' })} />
     </span>
