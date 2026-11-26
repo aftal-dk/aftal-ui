@@ -1,5 +1,42 @@
 # Ændringslog
 
+## 0.3.0 - nyt logo, én skriftvægt og ingen afdelingsfarver
+
+Logoet er tegnet om, overskrifterne bruger kun Gabarito 600, og afdelingsfarverne er udgået. Tokennavne, komponenter og props bevares, så en forbruger kan flytte sin lås uden at ændre kode. Det er kun importstien til `tokens/departments.css`, der forsvinder.
+
+### Brydende
+
+Det skal forbrugere gøre, når de flytter deres lås til 0.3.0:
+
+- **`tokens/departments.css` er slettet.** Fjern `@import` eller import af filen. `styles.css` importerer den ikke længere. Tokens, der var i filen, findes stadig som overgangsnavne (se "Bevaret").
+- **`data-dept` virker ikke længere.** Attributten har ingen regler, så `data-dept="byggeri"` og `data-dept="drift"` giver det almindelige Glød. Fjern attributten. Afdelingen skrives som tekst eller et neutralt mærke.
+- **Drift var violet (`#7a4dff`), og den farve er væk.** Hvor en app brugte `--drift*` eller `--violet` til noget synligt, bliver det nu Glød. Find og ret stederne, så afdelingen ikke afhænger af farve.
+- **Gabarito findes kun i vægt 600.** Filerne `assets/fonts/Gabarito-500.woff2`, `Gabarito-700.woff2` og `Gabarito-800.woff2` er slettet, og deres `@font-face` er fjernet. Henvis til `assets/fonts/Gabarito-600.woff2`. Kode, der beder om 700 eller 800 på Gabarito, får 600.
+- **`Badge`, `Button` og `Field` bruger altid brødtekstens skrift** (før arvede de skriften fra omgivelserne, så et mærke i en overskrift blev Gabarito).
+- **`--status-info` i lyst tema er ændret** fra `#376181` (0.2.0) til brandets `#3f6f8f`.
+- **Overskrifter er lettere.** `.h1` til `.h4`, `Stat`, `CtaBand`, `DeptCard`, `CategoryCard`, `RefCard`, `StepCard`, `WorkRow` og `CallbackForm` bruger vægt 600 (før 800 eller 700). Hierarkiet kommer fra størrelsen. `.h2` har linjehøjde 1,1 (før 1,06) og `.h3` 1,1 (før 1,15).
+- **Logofilerne har nyt udseende.** Filnavnene er de samme, men ordet Aftal' er tegnet ud fra Gabarito 600, og ikoner og favicon er skiftet. Hvor en app har kopieret `assets/logo` og `assets/favicon`, skal de kopieres igen.
+- **`Logo variant="app"` har Glød-flise** (før mørk flise). Vil du beholde den sorte flise, så brug den nye variant `app-black`.
+- **`--weight-display-heavy` og `--weight-display` er begge 600** (før 800 og 700). Brug ikke `--weight-display-heavy` i ny kode.
+
+### Nyt
+
+- Logo: nyt ord Aftal' tegnet ud fra Gabarito 600, altid ensfarvet (hvid på mørk bund og på Glød, sort på lys bund). Nye filer for logo, ikon, appikon og favicon. Ny `assets/logo/aftal-appikon-sort.svg` og ny variant `Logo variant="app-black"`. Der findes kun ét logo, og afdelinger skrives aldrig sammen med det.
+- Skrift: Gabarito 600 til alle overskrifter og nøgletal. Licensen (SIL Open Font License) ligger stadig ved skrifterne i `assets/fonts/`.
+- `.ai-label` og `.ai-surface` i `tokens/base.css`: hjælpeklasser til det, en AI har skrevet eller foreslår, med `--ai`, `--ai-soft` og `--ai-line`. Galleriet bruger dem.
+- En `Logo` uden variant inde i `data-surface="glod"` (eller `.section--glod`) er hvid i begge temaer.
+- Galleriet viser typografi i 600, begge appikoner og logoet på en Glød-flade.
+
+### Bevaret, så intet går i stykker
+
+- `Logo` tager stadig varianterne `byggeri`, `udvikling` og `drift` og viser det almindelige logo. `DeptCard` har uændrede props (`name`, `tag`, `description`, `href`) og viser afdelingen som tekst.
+- Overgangsnavnene og `--brand*` er sat i en regel, der gælder begge temaer, så de også følger et `data-theme` på et indre element.
+- `--byggeri`, `--byggeri-hover`, `--byggeri-text`, `--byggeri-soft`, `--byggeri-line`, `--drift`, `--drift-hover`, `--drift-text`, `--drift-soft`, `--drift-line` og `--on-dept` findes stadig i `tokens/colors.css` som overgangsnavne, der peger på `--accent*` og `--accent-ink`. `--violet` peger på `--accent`. Brug dem ikke i ny kode.
+- `--font-accent`, `--brand*`, `--kalk`, `--skiffer`, `--teglsten`, `--brand-print` og `--kulsort` er uændrede overgangsnavne fra 0.2.0.
+- Tokens, biblioteket selv har indført og bruger, er beholdt: `--focus` (fokusring, hvid på en Glød-flade), `--accent-wash` (hover på kort og rækker), `--onbrand` og `--onbrand-hover`, og `--text-*`, `--leading-*` og `--tracking-*` til størrelser og linjehøjder.
+- To afvigelser i det lyse tema står ved, fordi brandets værdier giver for lav kontrast som lille tekst: `--status-success` er `#356c4e` (brandet: `#3e7d5a`, 4,45:1 på `#f4f4f4`, biblioteket 5,61:1) og `--status-warning` er `#8f5f0a` (brandet: `#c98a1e`, 2,94:1 på hvid, biblioteket 5,51:1). Tabellen står i `DESIGN.md`. `--status-info` følger nu brandet (`#3f6f8f`, før `#376181`), som giver 5,41:1 på hvid og 4,92:1 på `#f4f4f4`. Øvrige tokens i `tokens/*.css` er ens med brandets `tokens.css`.
+- `CallbackForm` og `Field` bruger stadig "Byggeri" og "Drift" som valgmuligheder, fordi det er tekst og ikke farve.
+
 ## 0.2.0 - det nye brand
 
 Biblioteket og galleriet følger Aftals nye brand. Mørkt tema er standard.

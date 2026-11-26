@@ -162,8 +162,8 @@ export function App() {
             </div>
           </Block>
           <Block label="ai - lilla markerer det, en agent har skrevet eller foreslår, og står altid med ord">
-            <div className="g-ai-box">
-              <span className="g-ai-tag">Forslag fra agent</span>
+            <div className="g-ai-box ai-surface">
+              <span className="g-ai-tag ai-label">Forslag fra agent</span>
               <p className="body">Tagudskiftningen kan holde tidsplanen, hvis stilladset står torsdag.</p>
             </div>
           </Block>
@@ -177,17 +177,17 @@ export function App() {
           </Block>
         </Section>
 
-        <Section id="typografi" title="Typografi." lead="Overskrifter i Gabarito 800 og 700. Brødtekst og brugerflade i Google Sans Flex. Tal og kode i Google Sans Code.">
-          <Block label="h1 - gabarito 800">
+        <Section id="typografi" title="Typografi." lead="Overskrifter i Gabarito 600 på alle niveauer, og hierarkiet skabes med størrelse. Brødtekst og brugerflade i Google Sans Flex. Tal og kode i Google Sans Code.">
+          <Block label="h1 - gabarito 600, 72px">
             <p className="h1">Op til tiden. Ned til tiden.</p>
           </Block>
-          <Block label="h2 - gabarito 800">
+          <Block label="h2 - gabarito 600, 30 til 44px">
             <p className="h2">To afdelinger, ét hold.</p>
           </Block>
-          <Block label="h3 - gabarito 700">
+          <Block label="h3 - gabarito 600, 28px">
             <p className="h3">Alt samlet ét sted.</p>
           </Block>
-          <Block label="h4 - gabarito 700">
+          <Block label="h4 - gabarito 600, 20px">
             <p className="h4">Vi møder op, og vi gør det, vi har sagt.</p>
           </Block>
           <Block label="brødtekst - google sans flex 400">
@@ -235,15 +235,19 @@ export function App() {
               </div>
             </div>
           </Block>
-          <Block label="logo - følger temaet, og kan også sættes fast som hvid eller sort">
+          <Block label="logo - følger temaet, er altid hvidt på Glød, og kan også sættes fast som hvid eller sort">
             <div className="g-dark-tile">
               <Logo variant="white" height={38} />
               <Logo variant="icon-white" height={34} />
               <Logo variant="app" height={48} />
+              <Logo variant="app-black" height={48} />
             </div>
             <div className="g-light-tile" style={{ marginTop: 16 }}>
               <Logo variant="black" height={38} />
               <Logo variant="icon-black" height={34} />
+            </div>
+            <div className="g-brand-tile" data-surface="glod" style={{ marginTop: 16, justifyContent: 'flex-start' }}>
+              <Logo height={38} />
             </div>
           </Block>
         </Section>
@@ -251,8 +255,8 @@ export function App() {
         <Section id="kort" title="Kort." lead="Tint-fyld og hairline, ingen skygger. Hover er ren farve-fade - intet flytter sig.">
           <Block label="deptcard - to afdelinger">
             <div className="g-grid-2">
-              <DeptCard name="Aftal Byggeri" tag="Egne håndværkere, fast byggeledelse" description="Opførelse med egne faggrupper og én ansvarlig byggeleder." />
-              <DeptCard name="Aftal Drift" tag="Vi passer ejendommen efter aflevering" description="Teknisk vedligehold, service og akut udkald." />
+              <DeptCard name="Byggeri" tag="Egne håndværkere, fast byggeledelse" description="Opførelse med egne faggrupper og én ansvarlig byggeleder." />
+              <DeptCard name="Drift" tag="Vi passer ejendommen efter aflevering" description="Teknisk vedligehold, service og akut udkald." />
             </div>
           </Block>
           <Block label="categorycard - 2-up">
@@ -397,7 +401,7 @@ export function App() {
           <Block label="relatedlink">
             <div className="g-row" style={{ gap: 28 }}>
               <RelatedLink>Se vores referencer</RelatedLink>
-              <RelatedLink>Læs om Aftal Drift</RelatedLink>
+              <RelatedLink>Læs om Drift</RelatedLink>
             </div>
           </Block>
           <Block label="trustband - medlemsmærker">

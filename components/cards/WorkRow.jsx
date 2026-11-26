@@ -20,7 +20,7 @@ export function WorkRow({ title, description, points = [], image, soon = false, 
     }, style)}>
       <Media src={image} ratio="4 / 3" radius="var(--radius-lg)" style={{ border: '1px solid var(--line)' }} />
       <span style={{ display: 'flex', flexDirection: 'column', gap: 5, minWidth: 0 }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, letterSpacing: '-0.012em', lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', fontSize: 20, letterSpacing: '-0.012em', lineHeight: 1.2, display: 'inline-flex', alignItems: 'center', gap: 10, flexWrap: 'wrap' }}>
           {title}{soon ? <Badge size="md" /> : null}
         </span>
         <span style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--ink-soft)' }}>{description}</span>

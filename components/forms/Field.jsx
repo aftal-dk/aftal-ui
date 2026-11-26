@@ -24,7 +24,7 @@ export function Field({ label, type = 'text', name, id, placeholder, options, va
     boxShadow: focus ? '0 0 0 1px var(--accent)' : 'none',
     borderRadius: 'var(--radius-sm)',
     padding: label ? (isArea ? '26px 14px 10px' : '24px 14px 8px') : '13px 14px',
-    fontFamily: 'inherit', fontSize: 15, color: 'var(--ink)', outline: 'none', width: '100%',
+    fontFamily: 'var(--font-sans)', fontSize: 15, color: 'var(--ink)', outline: 'none', width: '100%',
     transition: 'border-color .15s ease, background-color .15s ease',
   };
   // The placeholder only appears while the field is focused and still empty -

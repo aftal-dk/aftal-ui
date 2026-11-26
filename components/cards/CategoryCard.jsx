@@ -21,7 +21,7 @@ export function CategoryCard({ title, description, services = [], image, href = 
         <Media src={image} ratio="16 / 9" radius="0" label={image ? undefined : title} />
       </span>
       <span style={{ display: 'flex', flexDirection: 'column', gap: 6, padding: '22px 24px 22px' }}>
-        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 700, fontSize: 20, letterSpacing: '-0.012em', lineHeight: 1.2 }}>{title}</span>
+        <span style={{ fontFamily: 'var(--font-display)', fontWeight: 'var(--weight-display)', fontSize: 20, letterSpacing: '-0.012em', lineHeight: 1.2 }}>{title}</span>
         <span style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--ink-soft)' }}>{description}</span>
         {services.length ? <span style={{ fontSize: 13, lineHeight: 1.5, color: 'var(--mute)', marginTop: 3 }}>{services.join(' · ')}</span> : null}
       </span>
