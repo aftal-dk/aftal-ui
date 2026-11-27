@@ -23,8 +23,19 @@ an association. Never "man".
 **Tone.** Informal and North Jutlandic, respectful, factual, modern and in
 conversation with the reader. Warm, but never at the expense of credibility.
 
-**Casing.** Sentence case everywhere. No all-caps labels, no small label lines
-above headings, no Title Case On Buttons.
+**Casing.** Sentence case everywhere. No all-caps labels, no Title Case On
+Buttons.
+
+**No eyebrows.** Nothing sits above a heading as a label: no small text line,
+no number and no icon, in any case or colour. The heading carries the label
+itself, for example a question as the heading with the answer as a short line
+under it.
+
+**Numbering.** Two-digit numbers with a full stop ("02. Investeringsoplæg")
+belong to chapters. Cards, steps or points inside a chapter use letters:
+"A. Hvad er formålet?". The number or letter is part of the heading, the same
+size, followed by an ordinary space. When several statements stand together in
+a box, each sentence gets its own line.
 
 **Headlines** are short statements that end in a full stop:
 
@@ -52,6 +63,22 @@ words; colour alone never carries it.
 - Dates DD.MM.YYYY, times with a colon (09:15).
 - Amounts in whole kroner, always stating whether they are incl. or excl. moms.
 - No emoji.
+
+**Figures in budgets and reports.** Every amount shows where it comes from: the
+budget line, account, invoice or assumption behind it, next to the amount or
+one click away. An amount nobody can trace is not shown. The source sits behind
+a small round "i" next to the post and shows on hover and on focus, never as a
+grey button or as text written out in the row. An assumption or estimate is
+marked with an asterisk. When there are two or more scenarios, they stand side
+by side as columns under each section, never behind filters or toggles, and
+there is no single result line that quietly picks one of them. Scenario columns
+look alike: none is tinted as if it were the chosen one, and the columns of one
+scenario stand under a shared group heading.
+
+**Reports for owners and investors** stand on their own: the reader understands
+everything without the author there to explain. Each section explains something
+or adds knowledge the reader needs, or it goes. Sections run from the
+conclusion to the detail, in the order a reader needs them.
 
 ---
 
@@ -110,6 +137,14 @@ Google Sans Code is loaded from Google Fonts.
 that breathe at clamp(56px, 9vw, 120px) and are separated by a hairline or by
 the full-bleed Glød band.
 
+**Small screens.** A card never splits a label and its text into two columns
+on a phone. The label sits as a short line above, and the text uses the full
+width of the card.
+
+**Wide tables.** A table wider than its container scrolls sideways inside its
+own wrapper, never the page. While there is more to see, a soft shadow on the
+right edge shows it, and it fades out when the user reaches the end.
+
 **Borders and elevation.** A hairline at 10% and a stronger one at 17% do the
 structural work. The house card is the `--tint` fill, a hairline and an 18px
 radius, with no shadow. Shadows exist only for floating surfaces such as
@@ -121,6 +156,23 @@ slide. Cards tint with `--accent-wash` and take an `--accent-line` border; rows
 tint the same way; links go to `--accent-text`. The primary button sinks 1px on
 press. Focus is a 2px ring in `--accent` at 2px offset, on `:focus-visible`
 only; fields double their border with a 1px ring instead.
+
+**Data tables.** Columns of numbers are separated by a thin line in `--line`,
+so each column reads on its own. A row that names a group, such as a heading
+for one kind of cost, spans all columns without column lines and stands apart
+from the rows under it. Columns that sum or average the others (Total,
+Gns./md.) sit between thin solid lines, and the columns they sum are divided by
+a lighter dashed line, so the line type shows what adds up. The total column is
+set in weight 600, header included. A status such as *Skøn* or *Kendt* is
+written as a word, in a status colour or a neutral badge, never as a dot next
+to the text. On hover, only the row and the column under the pointer are
+tinted, never other cells. A tinted column at the right edge keeps padding on
+both sides, so its numbers never touch the edge of the tint. Every table, and
+every box of key figures, has a rule in `--line` at the top and at the bottom.
+Sub-rows under a post are folded away from the start and open with a click on
+the post, which carries a small arrow. Months in rows, buttons and chart axes
+are short: "Nov 26", "Dec 26". All tables on a page share one type scale and
+one row height; a wide table does not get its own smaller size.
 
 **Motion.** 120 to 200ms on `cubic-bezier(0.4, 0, 0.2, 1)`, 300ms for the theme
 cross-fade. No bounce, no spring, nothing triggered by scrolling. Everything
